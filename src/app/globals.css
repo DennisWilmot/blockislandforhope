@@ -1,0 +1,91 @@
+@import "mapbox-gl/dist/mapbox-gl.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8f5ef;
+  --foreground: #223128;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+* {
+  border-color: rgba(26, 107, 74, 0.15);
+}
+
+@keyframes gridShimmerSweep {
+  0% {
+    transform: translateX(-130%) rotate(14deg);
+  }
+  100% {
+    transform: translateX(130%) rotate(14deg);
+  }
+}
+
+@keyframes gridSparklePulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes programInfoPop {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.living-tile {
+  isolation: isolate;
+}
+
+.living-tile::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 65%
+  );
+  animation: gridShimmerSweep 8s linear infinite;
+  z-index: 2;
+}
+
+.sparkle-dot {
+  animation: gridSparklePulse 4s ease-in-out infinite;
+  z-index: 2;
+}
+
+.program-pop {
+  animation: programInfoPop 260ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .living-tile::after,
+  .sparkle-dot,
+  .program-pop {
+    animation: none;
+  }
+}
