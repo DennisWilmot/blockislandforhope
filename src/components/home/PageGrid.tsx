@@ -8,6 +8,7 @@ type Tile = {
   description: string;
   imageUrl: string;
   overlay: string;
+  imagePosition?: string;
 };
 
 const tiles: Tile[] = [
@@ -15,48 +16,43 @@ const tiles: Tile[] = [
     href: "/our-story",
     title: "Our Story",
     description: "How a local vision grew into a movement of practical hope.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1469571486292-b53601020f1f?auto=format&fit=crop&w=1600&q=80",
+    imageUrl: "/images/optimized/DJI_0579.jpg",
     overlay: "from-brand-forest/85 via-brand-forest/45 to-brand-ink/70",
   },
   {
     href: "/what-we-do",
     title: "What We Do",
     description: "Explore the programmes serving families, youth, and seniors.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1600&q=80",
+    imageUrl: "/images/optimized/DSC02874.jpg",
+    imagePosition: "center 28%",
     overlay: "from-brand-navy/85 via-brand-navy/45 to-brand-ink/70",
   },
   {
     href: "/impact",
     title: "Impact",
     description: "See outcomes, numbers, and stories from the field.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1600&q=80",
+    imageUrl: "/images/optimized/DJI_0530.jpg",
     overlay: "from-brand-amber/85 via-brand-amber/45 to-brand-ink/70",
   },
   {
     href: "/take-action",
     title: "Take Action",
     description: "Choose your path: donate, volunteer, partner, or contribute.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1600&q=80",
+    imageUrl: "/images/optimized/DJI_0502.jpg",
     overlay: "from-brand-coral/85 via-brand-coral/45 to-brand-ink/70",
   },
   {
     href: "/updates",
     title: "Updates",
     description: "Read event recaps and follow where outreach is happening.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1509099863731-ef4bff19e808?auto=format&fit=crop&w=1600&q=80",
+    imageUrl: "/images/optimized/DSC02671.jpg",
     overlay: "from-brand-forest/85 via-brand-forest/45 to-brand-ink/70",
   },
   {
     href: "/contact",
     title: "Contact",
     description: "Reach our team to ask, connect, or collaborate.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1600&q=80",
+    imageUrl: "/images/optimized/DSC02811.jpg",
     overlay: "from-brand-navy/85 via-brand-navy/45 to-brand-ink/70",
   },
 ];
@@ -80,7 +76,7 @@ export function PageGrid() {
           >
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-              style={{ backgroundImage: `url(${tile.imageUrl})` }}
+              style={{ backgroundImage: `url(${tile.imageUrl})`, backgroundPosition: tile.imagePosition ?? "center" }}
             />
             <div className={`absolute inset-0 bg-gradient-to-br ${tile.overlay}`} />
             <span className="sparkle-dot absolute left-[16%] top-[20%] h-1.5 w-1.5 rounded-full bg-white/75" />

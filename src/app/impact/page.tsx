@@ -86,8 +86,8 @@ export default function ImpactPage() {
           <article className="rounded-2xl border border-brand-forest/15 bg-white p-6 shadow-soft">
             <div className="relative mb-4 h-60 w-full overflow-hidden rounded-xl">
               <Image
-                src={outreachEvents[1].imageUrl}
-                alt="Medical mission team serving residents"
+                src="/images/DJI_0530.png"
+                alt="Aerial view of a Block Island for Hope impact site"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

@@ -42,7 +42,14 @@ export function UpdatesFeed() {
         {events.map((event) => (
           <article key={event.id} className="overflow-hidden rounded-2xl border border-brand-forest/15 bg-white shadow-soft">
             <div className="relative h-48 w-full">
-              <Image src={event.imageUrl} alt={event.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+              <Image
+                src={event.imageUrl}
+                alt={event.title}
+                fill
+                className="object-cover"
+                style={{ objectPosition: event.imagePosition ?? "center" }}
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
             </div>
             <div className="p-5">
               <span className={`inline-flex rounded-full px-3 py-1 text-xs font-medium ${eventTypeStyles[event.type]}`}>

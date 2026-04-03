@@ -9,7 +9,13 @@ import { outreachEvents } from "@/data/events";
 const autoAdvanceMs = 4500;
 
 export function HeroCarousel() {
-  const slides = useMemo(() => outreachEvents.slice(0, 3), []);
+  const slides = useMemo(
+    () =>
+      outreachEvents
+        .filter((event) => event.type === "Community Outreach" && event.dateLabel.includes("Day"))
+        .sort((a, b) => a.isoDate.localeCompare(b.isoDate)),
+    [],
+  );
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {

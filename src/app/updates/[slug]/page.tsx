@@ -21,7 +21,15 @@ export default async function EventDetailPage({ params }: Props) {
     <div className="px-4 py-8 sm:px-6 lg:px-8">
       <article className="mx-auto w-full max-w-4xl">
         <div className="relative h-[350px] w-full overflow-hidden rounded-3xl">
-          <Image src={event.imageUrl} alt={event.title} fill className="object-cover" priority sizes="100vw" />
+          <Image
+            src={event.imageUrl}
+            alt={event.title}
+            fill
+            className="object-cover"
+            style={{ objectPosition: event.imagePosition ?? "center" }}
+            priority
+            sizes="100vw"
+          />
         </div>
         <span className={`mt-6 inline-flex rounded-full px-3 py-1 text-xs font-medium ${eventTypeStyles[event.type]}`}>
           {event.dateLabel}

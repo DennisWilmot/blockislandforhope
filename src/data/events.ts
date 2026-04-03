@@ -21,8 +21,7 @@ export const outreachEvents: OutreachEvent[] = [
       "Priority needs logged for follow-up support",
       "Community partner coordination established onsite",
     ],
-    imageUrl:
-      "https://images.unsplash.com/photo-1509099863731-ef4bff19e808?auto=format&fit=crop&w=1400&q=80",
+    imageUrl: "/images/optimized/DSC02560-1.jpg",
     mapPosition: {
       top: "72%",
       left: "20%",
@@ -52,8 +51,7 @@ export const outreachEvents: OutreachEvent[] = [
       "Local partners engaged for continuity support",
       "Priority cases prepared for follow-up",
     ],
-    imageUrl:
-      "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1400&q=80",
+    imageUrl: "/images/optimized/DJI_0689.jpg",
     mapPosition: {
       top: "66%",
       left: "28%",
@@ -83,15 +81,14 @@ export const outreachEvents: OutreachEvent[] = [
       "Household support and referral notes captured",
       "Community follow-up pathway prepared",
     ],
-    imageUrl:
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1400&q=80",
+    imageUrl: "/images/optimized/DJI_0514.jpg",
     mapPosition: {
       top: "60%",
       left: "10%",
     },
     coordinates: {
-      lat: 18.1669,
-      lng: -78.1387,
+      lat: 18.2616,
+      lng: -78.0712,
     },
   },
   {
@@ -114,8 +111,7 @@ export const outreachEvents: OutreachEvent[] = [
       "Student and staff support needs documented",
       "Follow-up collaboration plan agreed",
     ],
-    imageUrl:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1400&q=80",
+    imageUrl: "/images/optimized/DSC02671.jpg",
     mapPosition: {
       top: "64%",
       left: "24%",
@@ -145,8 +141,8 @@ export const outreachEvents: OutreachEvent[] = [
       "Needs and referrals captured for next phase",
       "School partnership support strengthened",
     ],
-    imageUrl:
-      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=80",
+    imageUrl: "/images/optimized/DSC02665.png",
+    imagePosition: "center 28%",
     mapPosition: {
       top: "68%",
       left: "22%",
@@ -176,8 +172,7 @@ export const outreachEvents: OutreachEvent[] = [
       "Outstanding household needs addressed",
       "Support continuity strengthened before transition",
     ],
-    imageUrl:
-      "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1400&q=80",
+    imageUrl: "/images/optimized/DJI_0521.jpg",
     mapPosition: {
       top: "71%",
       left: "21%",
