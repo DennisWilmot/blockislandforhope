@@ -37,7 +37,7 @@ function isDayPopup(label: string) {
 
 export function WhereWeWorkMap({ mapboxToken = "" }: Props) {
   const mapRef = useRef<MapRef | null>(null);
-  const hoverTimeoutRef = useRef<ReturnType<typeof window.setTimeout> | null>(null);
+  const hoverTimeoutRef = useRef<number | null>(null);
   const [viewState, setViewState] = useState(initialMapView);
   const [activeEventId, setActiveEventId] = useState(defaultEvent.id);
   const [popupEventId, setPopupEventId] = useState<string | null>(null);

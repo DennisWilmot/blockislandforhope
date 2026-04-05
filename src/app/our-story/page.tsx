@@ -62,11 +62,11 @@ export default function OurStoryPage() {
     <div className="pb-14">
       <section className="relative h-[30svh] min-h-[210px] w-full overflow-hidden md:h-[42svh] md:min-h-[320px]">
         <Image
-          src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1600&q=80"
-          alt="Block Island for Hope team in outreach planning"
+          src="/images/DSC02966.png"
+          alt="Block Island for Hope team visiting a community site in Jamaica"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center md:object-[center_42%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-black/10" />
