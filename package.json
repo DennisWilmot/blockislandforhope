@@ -2,7 +2,7 @@
   "name": "blockislandforhope",
   "version": "1.0.0",
   "private": true,
-  "description": "Block Island for Hope charity website",
+  "description": "Block Island Hope for Jamaica charity website",
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",

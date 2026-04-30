@@ -20,7 +20,7 @@ export function SiteFooter() {
     <footer className="bg-[#124834] px-4 py-12 text-white sm:px-6 lg:px-8">
       <div className="mx-auto grid w-full max-w-6xl gap-8 md:grid-cols-3">
         <div>
-          <p className="font-display text-2xl">Block Island for Hope</p>
+          <p className="font-display text-2xl">Block Island Hope for Jamaica</p>
           <p className="mt-3 max-w-sm text-sm text-white/85">
             Rooted in compassion, we serve Jamaican communities through practical outreach, healthcare access, and
             nourishment.

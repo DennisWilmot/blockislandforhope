@@ -22,7 +22,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-brand-forest/10 bg-[#f8f5ef]/95 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="font-display text-xl text-brand-forest">
-          Block Island for Hope
+          Block Island Hope for Jamaica
         </Link>
         <nav className="hidden items-center gap-5 md:flex">
           {navItems.map((item) => {

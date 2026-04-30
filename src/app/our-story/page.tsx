@@ -8,7 +8,7 @@ const roadmapSteps = [
     title: "Inception",
     period: "Where it started",
     description:
-      "Block Island for Hope began with small neighborhood visits and simple care deliveries led by committed local volunteers.",
+      "Block Island Hope for Jamaica began with small neighborhood visits and simple care deliveries led by committed local volunteers.",
     points: [
       "A relationship-first model rooted in listening",
       "Early outreach focused on families, elders, and school-age children",
@@ -63,7 +63,7 @@ export default function OurStoryPage() {
       <section className="relative h-[30svh] min-h-[210px] w-full overflow-hidden md:h-[42svh] md:min-h-[320px]">
         <Image
           src="/images/DSC02966.png"
-          alt="Block Island for Hope team visiting a community site in Jamaica"
+          alt="Block Island Hope for Jamaica team visiting a community site in Jamaica"
           fill
           priority
           className="object-cover object-center md:object-[center_42%]"
@@ -147,7 +147,7 @@ export default function OurStoryPage() {
             design every event around long-term wellbeing, not one-time visibility.
           </p>
           <p>
-            Today, Block Island for Hope serves communities across Jamaica through outreach days, mobile medical
+            Today, Block Island Hope for Jamaica serves communities across Jamaica through outreach days, mobile medical
             missions, and feeding programmes. Our work is guided by compassion, accountability, and a belief that hope
             becomes credible when people see it in action.
           </p>

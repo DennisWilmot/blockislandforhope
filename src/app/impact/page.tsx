@@ -87,7 +87,7 @@ export default function ImpactPage() {
             <div className="relative mb-4 h-60 w-full overflow-hidden rounded-xl">
               <Image
                 src="/images/DJI_0530.png"
-                alt="Aerial view of a Block Island for Hope impact site"
+                alt="Aerial view of a Block Island Hope for Jamaica impact site"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
