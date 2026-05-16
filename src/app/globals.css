@@ -7,8 +7,6 @@
 :root {
   --background: #f8f5ef;
   --foreground: #223128;
-  --font-playfair: Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-dm-sans: "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 html {
@@ -21,28 +19,12 @@ body {
 }
 
 * {
-  border-color: rgba(26, 107, 74, 0.15);
+  border-color: rgba(26, 107, 74, 0.12);
 }
 
-@keyframes gridShimmerSweep {
-  0% {
-    transform: translateX(-130%) rotate(14deg);
-  }
-  100% {
-    transform: translateX(130%) rotate(14deg);
-  }
-}
-
-@keyframes gridSparklePulse {
-  0%,
-  100% {
-    opacity: 0.25;
-    transform: scale(0.8);
-  }
-  50% {
-    opacity: 0.95;
-    transform: scale(1.25);
-  }
+::selection {
+  background: rgba(26, 107, 74, 0.15);
+  color: #223128;
 }
 
 @keyframes programInfoPop {
@@ -56,45 +38,40 @@ body {
   }
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .living-tile {
   isolation: isolate;
-}
-
-.living-tile::after {
-  content: "";
-  position: absolute;
-  inset: -40%;
-  pointer-events: none;
-  background: linear-gradient(
-    115deg,
-    transparent 35%,
-    rgba(255, 255, 255, 0.18) 50%,
-    transparent 65%
-  );
-  animation: gridShimmerSweep 8s linear infinite;
-  z-index: 2;
-}
-
-.sparkle-dot {
-  animation: gridSparklePulse 4s ease-in-out infinite;
-  z-index: 2;
 }
 
 .program-pop {
   animation: programInfoPop 260ms ease;
 }
 
+.animate-fade-up {
+  animation: fadeUp 0.6s ease both;
+}
+
 .map-event-popup .mapboxgl-popup-content {
   padding: 0;
   border-radius: 18px;
-  border: 1px solid rgba(26, 107, 74, 0.18);
-  background: rgba(248, 245, 239, 0.96);
-  box-shadow: 0 18px 45px rgba(34, 49, 40, 0.18);
+  border: 1px solid rgba(26, 107, 74, 0.14);
+  background: rgba(248, 245, 239, 0.97);
+  box-shadow: 0 20px 50px rgba(34, 49, 40, 0.16);
   overflow: hidden;
 }
 
 .map-event-popup .mapboxgl-popup-tip {
-  border-top-color: rgba(248, 245, 239, 0.96);
+  border-top-color: rgba(248, 245, 239, 0.97);
 }
 
 .map-event-popup .mapboxgl-popup-close-button {
@@ -103,7 +80,7 @@ body {
   width: 28px;
   height: 28px;
   border-radius: 9999px;
-  border: 1px solid rgba(26, 107, 74, 0.2);
+  border: 1px solid rgba(26, 107, 74, 0.15);
   background: rgba(248, 245, 239, 0.98);
   color: rgba(34, 49, 40, 0.7);
   font-size: 18px;
@@ -116,9 +93,8 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .living-tile::after,
-  .sparkle-dot,
-  .program-pop {
+  .program-pop,
+  .animate-fade-up {
     animation: none;
   }
 }

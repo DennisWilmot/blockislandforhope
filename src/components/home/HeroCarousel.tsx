@@ -72,7 +72,8 @@ export function HeroCarousel({
           />
         ))}
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-ink/35 via-brand-ink/55 to-brand-ink/80" />
+      <div className="absolute inset-0 bg-brand-ink/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-ink/30 to-brand-ink/70" />
 
       <div className="relative z-10 mx-auto flex h-full w-full max-w-6xl flex-col justify-between px-4 py-10 text-white sm:px-6 md:py-14 lg:px-8">
         <div className="max-w-3xl">

@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { PageHeader } from "@/components/ui/PageHeader";
+import { FadeInSection } from "@/components/ui/FadeInSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const paths = [
@@ -51,48 +53,52 @@ const paths = [
 
 export default function TakeActionPage() {
   return (
-    <div className="py-10">
-      <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Take Action"
-          title="Four ways to stand with communities"
-          description="Choose the pathway that best fits your capacity. Every action contributes to long-term local impact."
-        />
-      </section>
+    <>
+      <PageHeader
+        eyebrow="Take Action"
+        title="Four ways to stand with communities"
+        description="Choose the pathway that best fits your capacity. Every action contributes to long-term local impact."
+        imageUrl="/images/optimized/DJI_0502.jpg"
+      />
 
-      <section className="mt-6">
-        <div className="space-y-px bg-brand-forest/20">
-          {paths.map((path) => (
-            <article key={path.title} className="group relative overflow-hidden">
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: `url(${path.imageUrl})` }}
-              />
-              <div className={`absolute inset-0 bg-gradient-to-r ${path.overlay}`} />
-              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.14)_45%,transparent_70%)] opacity-40" />
+      <section className="mt-1">
+        <div className="space-y-px">
+          {paths.map((path, index) => (
+            <FadeInSection key={path.title} delay={index * 80}>
+              <article className="group relative overflow-hidden">
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-[800ms] ease-out group-hover:scale-[1.03]"
+                  style={{ backgroundImage: `url(${path.imageUrl})` }}
+                />
+                <div className="absolute inset-0 bg-brand-ink/40" />
+                <div className={`absolute inset-0 bg-gradient-to-r ${path.overlay}`} />
 
-              <div className="relative mx-auto grid w-full max-w-6xl gap-6 px-4 py-8 text-white sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:px-8 lg:py-10">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
-                    {path.highlighted ? "Priority Path" : "Action Path"}
-                  </p>
-                  <h2 className="mt-2 font-display text-4xl leading-tight">{path.title}</h2>
-                  <p className="mt-3 max-w-2xl text-sm text-white/90 md:text-base">{path.description}</p>
+                <div className="relative mx-auto grid w-full max-w-6xl gap-6 px-4 py-10 text-white sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:px-8 lg:py-14">
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/75">
+                      {path.highlighted ? "Priority Path" : "Action Path"}
+                    </p>
+                    <h2 className="mt-3 font-display text-4xl leading-tight tracking-tight">{path.title}</h2>
+                    <p className="mt-3 max-w-[50ch] text-sm leading-relaxed text-white/90 md:text-base">{path.description}</p>
+                  </div>
+
+                  <div className="flex items-end justify-start lg:justify-end">
+                    <Link
+                      href={path.href}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-white transition-all duration-200 hover:gap-2.5"
+                    >
+                      {path.button}
+                      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                        <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
-
-                <div className="flex items-end justify-start lg:justify-end">
-                  <Link
-                    href={path.href}
-                    className="inline-flex items-center border-b border-white/70 pb-1 text-sm font-semibold text-white transition-colors hover:border-white hover:text-brand-cream"
-                  >
-                    {path.button}
-                  </Link>
-                </div>
-              </div>
-            </article>
+              </article>
+            </FadeInSection>
           ))}
         </div>
       </section>
-    </div>
+    </>
   );
 }

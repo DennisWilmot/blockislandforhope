@@ -13,6 +13,7 @@ export type OutreachEvent = {
   impactPoints: string[];
   imageUrl: string;
   imagePosition?: string;
+  collageImages?: string[];
   mapPosition: {
     top: string;
     left: string;

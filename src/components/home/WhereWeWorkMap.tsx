@@ -143,21 +143,23 @@ export function WhereWeWorkMap({
   }, []);
 
   return (
-    <section id={sectionId} className="bg-brand-cream">
-      <div className="px-4 pb-4 pt-10 sm:px-6 lg:px-8">
-        <div className="mx-auto w-full max-w-6xl">
-          <SectionHeading eyebrow={eyebrow} title={title} description={description} />
-        </div>
+    <section id={sectionId} className="min-h-[100svh] bg-brand-cream">
+      <div className="px-4 pb-8 pt-14 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow={eyebrow}
+          title={title}
+          description={description}
+        />
       </div>
 
-      <div className="px-4 pb-10 sm:px-6 lg:px-8">
-        <div className="mx-auto grid w-full max-w-6xl gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(330px,0.8fr)] lg:items-start">
+      <div className="px-4 pb-14 sm:px-6 lg:px-8">
+        <div className="mx-auto grid w-full max-w-6xl gap-6 lg:grid-cols-[minmax(0,1.45fr)_minmax(320px,0.75fr)] lg:items-start">
           <div>
             <div className="mb-3">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-forest">Jamaica Overview</p>
               <h3 className="mt-1 font-display text-2xl leading-tight text-brand-ink">National mission footprint</h3>
             </div>
-            <div className="relative h-[54svh] min-h-[340px] overflow-hidden lg:h-[560px]">
+            <div className="relative h-[56svh] min-h-[380px] overflow-hidden rounded-2xl lg:h-[650px]">
               {mapboxToken ? (
                 <Map
                   {...viewState}
@@ -257,7 +259,7 @@ export function WhereWeWorkMap({
               </p>
             </div>
 
-            <div className="relative h-[260px] overflow-hidden md:h-[300px] lg:h-[240px]">
+            <div className="relative h-[300px] overflow-hidden rounded-2xl md:h-[360px] lg:h-[330px]">
               {mapboxToken ? (
                 <Map
                   {...focusedViewState}

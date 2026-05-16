@@ -18,7 +18,7 @@ type RingNode = {
 const ringNodes: RingNode[] = [
   {
     id: "prog-1",
-    label: "Humanitarian Relief",
+    label: "Humanitarian Relief & Recovery",
     shortLabel: "Relief",
     top: "6%",
     left: "50%",
@@ -27,7 +27,7 @@ const ringNodes: RingNode[] = [
   },
   {
     id: "prog-2",
-    label: "Youth & Education",
+    label: "Youth & Educational Advancement",
     shortLabel: "Youth",
     top: "50%",
     left: "94%",
@@ -36,7 +36,7 @@ const ringNodes: RingNode[] = [
   },
   {
     id: "prog-3",
-    label: "Health & Family Support",
+    label: "Health & Family Support Services",
     shortLabel: "Health",
     top: "94%",
     left: "50%",
@@ -45,7 +45,7 @@ const ringNodes: RingNode[] = [
   },
   {
     id: "prog-4",
-    label: "Community Development",
+    label: "Community Development & Economic Empowerment",
     shortLabel: "Community",
     top: "50%",
     left: "6%",
@@ -88,7 +88,7 @@ export function ProgramRing() {
               aria-label={`Show ${node.label}`}
             >
               <span
-                className={`inline-flex h-11 min-w-[92px] items-center justify-center px-2 text-center text-[10px] font-semibold uppercase tracking-[0.08em] text-white shadow-soft sm:h-12 sm:min-w-[120px] sm:px-3 sm:text-xs ${node.color}`}
+                className={`inline-flex h-11 min-w-[92px] items-center justify-center rounded-full px-2 text-center text-[10px] font-semibold uppercase tracking-[0.08em] text-white shadow-soft sm:h-12 sm:min-w-[120px] sm:px-3 sm:text-xs ${node.color}`}
               >
                 {node.shortLabel}
               </span>

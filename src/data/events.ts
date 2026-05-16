@@ -5,23 +5,29 @@ export const outreachEvents: OutreachEvent[] = [
     id: "evt-001",
     slug: "vineyards-black-river-day-1",
     title: "Outreach Day 1 - Vineyards Community",
-    location: "Vineyards Community, Black River, St. Elizabeth, Jamaica",
+    location: "Vineyard & Pondside Primary, St. Elizabeth, Jamaica",
     dateLabel: "Community Outreach - Day 1",
-    isoDate: "2026-03-01",
+    isoDate: "2026-01-06",
     type: "Community Outreach",
     summary:
-      "Day one focused on household support and community visits in Vineyards, Black River.",
+      "Day one focused on household support and community visits in Vineyard, plus school outreach at Pondside Primary.",
     recap: [
-      "The team began in Vineyards, Black River, meeting families directly and documenting priority needs for follow-up support.",
+      "The team began in Vineyard, St. Elizabeth, meeting families directly and documenting priority needs for follow-up support.",
       "Volunteers distributed care items and made home visits for seniors and households with limited mobility.",
       "Community leaders helped us map urgent requests so support could continue through the remaining outreach days.",
     ],
     impactPoints: [
-      "Household outreach completed across the Vineyards area",
+      "Household outreach completed across the Vineyard area",
       "Priority needs logged for follow-up support",
       "Community partner coordination established onsite",
     ],
     imageUrl: "/images/optimized/DSC02560-1.jpg",
+    collageImages: [
+      "/images/missions/arrival-1.png",
+      "/images/missions/day1-1.png",
+      "/images/missions/day1-2.png",
+      "/images/missions/day1-3.png",
+    ],
     mapPosition: {
       top: "72%",
       left: "20%",
@@ -32,12 +38,47 @@ export const outreachEvents: OutreachEvent[] = [
     },
   },
   {
+    id: "evt-006",
+    slug: "vineyards-black-river-day-2",
+    title: "Outreach Day 2 - Vineyard & Nightingale Grove",
+    location: "Vineyard & Nightingale Grove (New Market), St. Elizabeth, Jamaica",
+    dateLabel: "Community Outreach - Day 2",
+    isoDate: "2026-01-07",
+    type: "Community Outreach",
+    summary:
+      "Day two covered Vineyard and Nightingale Grove in New Market with follow-up outreach and direct support continuity.",
+    recap: [
+      "The second day expanded coverage to Vineyard and Nightingale Grove in the New Market area, building on day one's groundwork.",
+      "Teams revisited priority homes and coordinated with local contacts to confirm ongoing support lines.",
+      "This follow-up day helped close immediate gaps before outreach moved to the next locations.",
+    ],
+    impactPoints: [
+      "Follow-up visits completed across Vineyard and Nightingale Grove",
+      "Outstanding household needs addressed",
+      "Support continuity strengthened before transition",
+    ],
+    imageUrl: "/images/optimized/DJI_0521.jpg",
+    collageImages: [
+      "/images/missions/day2-1.png",
+      "/images/missions/day2-2.png",
+      "/images/missions/day2-3.png",
+    ],
+    mapPosition: {
+      top: "71%",
+      left: "21%",
+    },
+    coordinates: {
+      lat: 18.0297,
+      lng: -77.844,
+    },
+  },
+  {
     id: "evt-002",
     slug: "galloway-day-3-outreach",
     title: "Outreach Day 3 - Galloway",
-    location: "Galloway District, St. Elizabeth, Jamaica",
+    location: "Galloway District, Westmoreland, Jamaica",
     dateLabel: "Community Outreach - Day 3",
-    isoDate: "2026-03-03",
+    isoDate: "2026-01-08",
     type: "Community Outreach",
     summary:
       "Day three outreach shifted to Galloway with direct family engagement and practical support.",
@@ -52,6 +93,12 @@ export const outreachEvents: OutreachEvent[] = [
       "Priority cases prepared for follow-up",
     ],
     imageUrl: "/images/optimized/DJI_0689.jpg",
+    collageImages: [
+      "/images/missions/day3-1.png",
+      "/images/missions/day3-2.png",
+      "/images/missions/day3-3.png",
+      "/images/missions/collage-before-after.png",
+    ],
     mapPosition: {
       top: "66%",
       left: "28%",
@@ -67,7 +114,7 @@ export const outreachEvents: OutreachEvent[] = [
     title: "Outreach Day 4 - Petersfield",
     location: "Petersfield, Westmoreland, Jamaica",
     dateLabel: "Community Outreach - Day 4",
-    isoDate: "2026-03-04",
+    isoDate: "2026-01-09",
     type: "Community Outreach",
     summary:
       "Day four was completed in Petersfield, Westmoreland, with direct outreach across the district.",
@@ -82,6 +129,11 @@ export const outreachEvents: OutreachEvent[] = [
       "Community follow-up pathway prepared",
     ],
     imageUrl: "/images/optimized/DJI_0514.jpg",
+    collageImages: [
+      "/images/missions/day4-1.png",
+      "/images/missions/day4-2.png",
+      "/images/missions/day4-3.png",
+    ],
     mapPosition: {
       top: "60%",
       left: "10%",
@@ -97,7 +149,7 @@ export const outreachEvents: OutreachEvent[] = [
     title: "School Outreach - Top Hill Primary",
     location: "Top Hill Primary School, St. Elizabeth, Jamaica",
     dateLabel: "Community Outreach - School Visit",
-    isoDate: "2026-03-05",
+    isoDate: "2026-01-06",
     type: "Community Outreach",
     summary:
       "Our team also served at Top Hill Primary in St. Elizabeth with school-based outreach support.",
@@ -112,6 +164,11 @@ export const outreachEvents: OutreachEvent[] = [
       "Follow-up collaboration plan agreed",
     ],
     imageUrl: "/images/optimized/DSC02671.jpg",
+    collageImages: [
+      "/images/missions/school-1.png",
+      "/images/missions/school-2.png",
+      "/images/missions/school-3.png",
+    ],
     mapPosition: {
       top: "64%",
       left: "24%",
@@ -127,7 +184,7 @@ export const outreachEvents: OutreachEvent[] = [
     title: "School Outreach - Pondside Primary",
     location: "Pondside Primary School, St. Elizabeth, Jamaica",
     dateLabel: "Community Outreach - School Visit",
-    isoDate: "2026-03-06",
+    isoDate: "2026-01-06",
     type: "Community Outreach",
     summary:
       "Additional outreach was completed at Pondside Primary in St. Elizabeth.",
@@ -143,6 +200,11 @@ export const outreachEvents: OutreachEvent[] = [
     ],
     imageUrl: "/images/optimized/DSC02665.png",
     imagePosition: "center 28%",
+    collageImages: [
+      "/images/missions/arrival-2.png",
+      "/images/missions/arrival-3.png",
+      "/images/missions/collage-shrewsbury.png",
+    ],
     mapPosition: {
       top: "68%",
       left: "22%",
@@ -150,36 +212,6 @@ export const outreachEvents: OutreachEvent[] = [
     coordinates: {
       lat: 18.0309,
       lng: -77.706,
-    },
-  },
-  {
-    id: "evt-006",
-    slug: "vineyards-black-river-day-2",
-    title: "Outreach Day 2 - Vineyards Follow-Up",
-    location: "Vineyards Community, Black River, St. Elizabeth, Jamaica",
-    dateLabel: "Community Outreach - Day 2",
-    isoDate: "2026-03-02",
-    type: "Community Outreach",
-    summary:
-      "Day two returned to Vineyards, Black River, for follow-up outreach and direct support continuity.",
-    recap: [
-      "The second day in Vineyards focused on follow-up checks, unresolved requests, and expanded household coverage.",
-      "Teams revisited priority homes and coordinated with local contacts to confirm ongoing support lines.",
-      "This follow-up day helped close immediate gaps before outreach moved to the next locations.",
-    ],
-    impactPoints: [
-      "Follow-up visits completed in Vineyards",
-      "Outstanding household needs addressed",
-      "Support continuity strengthened before transition",
-    ],
-    imageUrl: "/images/optimized/DJI_0521.jpg",
-    mapPosition: {
-      top: "71%",
-      left: "21%",
-    },
-    coordinates: {
-      lat: 18.0297,
-      lng: -77.844,
     },
   },
 ];

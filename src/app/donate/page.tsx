@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { FadeInSection } from "@/components/ui/FadeInSection";
 
 const tiers = [
   {
@@ -27,63 +28,70 @@ export default function DonatePage() {
   const [customAmount, setCustomAmount] = useState<string>("");
 
   return (
-    <div className="px-4 py-10 sm:px-6 lg:px-8">
-      <section className="mx-auto w-full max-w-4xl rounded-3xl border border-brand-forest/15 bg-white p-8 shadow-soft md:p-10">
-        <SectionHeading
-          eyebrow="Donate"
-          title="Your generosity keeps hope moving"
-          description="Every contribution helps us continue practical outreach for families who need consistent support."
-          align="center"
-        />
+    <>
+      <PageHeader
+        eyebrow="Donate"
+        title="Your generosity keeps hope moving"
+        description="Every contribution helps us continue practical outreach for families who need consistent support."
+      />
 
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {tiers.map((tier) => (
-            <button
-              key={tier.amount}
-              type="button"
-              onClick={() => {
-                setSelectedAmount(tier.amount);
-                setCustomAmount("");
-              }}
-              className={`cursor-pointer rounded-2xl border p-4 text-left transition-colors ${
-                selectedAmount === tier.amount && customAmount === ""
-                  ? "border-brand-forest bg-brand-forest/5"
-                  : "border-brand-forest/20 hover:border-brand-forest/45"
-              }`}
-            >
-              <p className="font-display text-3xl text-brand-ink">{tier.title}</p>
-              <p className="mt-2 text-sm text-brand-ink/75">{tier.description}</p>
-            </button>
-          ))}
-        </div>
+      <div className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <FadeInSection>
+          <section className="mx-auto w-full max-w-3xl">
+            <div className="rounded-2xl border border-brand-forest/10 bg-white p-8 shadow-soft md:p-10">
+              <div className="grid gap-4 md:grid-cols-3">
+                {tiers.map((tier) => (
+                  <button
+                    key={tier.amount}
+                    type="button"
+                    onClick={() => {
+                      setSelectedAmount(tier.amount);
+                      setCustomAmount("");
+                    }}
+                    className={`cursor-pointer rounded-2xl border p-5 text-left transition-all duration-200 ${
+                      selectedAmount === tier.amount && customAmount === ""
+                        ? "border-brand-forest bg-brand-forest/5 shadow-soft"
+                        : "border-brand-forest/15 hover:border-brand-forest/35 hover:shadow-soft"
+                    }`}
+                  >
+                    <p className="font-display text-3xl tracking-tight text-brand-ink">{tier.title}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-brand-ink/65">{tier.description}</p>
+                  </button>
+                ))}
+              </div>
 
-        <label className="mt-5 block text-sm font-medium text-brand-ink" htmlFor="custom-amount">
-          Custom amount (USD)
-        </label>
-        <input
-          id="custom-amount"
-          type="number"
-          min="1"
-          placeholder="Enter custom amount"
-          value={customAmount}
-          onChange={(event) => setCustomAmount(event.target.value)}
-          className="mt-2 w-full rounded-xl border border-brand-forest/25 px-4 py-3 text-sm text-brand-ink focus:border-brand-forest focus:outline-none focus:ring-2 focus:ring-brand-forest/25"
-        />
+              <div className="mt-8">
+                <label className="block text-sm font-medium text-brand-ink" htmlFor="custom-amount">
+                  Custom amount (USD)
+                </label>
+                <input
+                  id="custom-amount"
+                  type="number"
+                  min="1"
+                  placeholder="Enter custom amount"
+                  value={customAmount}
+                  onChange={(event) => setCustomAmount(event.target.value)}
+                  className="mt-2 w-full rounded-xl border border-brand-forest/15 bg-brand-cream/40 px-4 py-3 text-sm transition-colors duration-200 placeholder:text-brand-ink/35 focus:border-brand-forest focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
+                />
+              </div>
 
-        <button
-          type="button"
-          className="mt-6 w-full rounded-full bg-brand-forest px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#165a3f]"
-        >
-          Donate {customAmount ? `$${customAmount}` : `$${selectedAmount}`}
-        </button>
+              <button
+                type="button"
+                className="mt-8 w-full rounded-full bg-brand-forest px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-forest-dark hover:shadow-md active:scale-[0.99]"
+              >
+                Donate {customAmount ? `$${customAmount}` : `$${selectedAmount}`}
+              </button>
 
-        <p className="mt-4 rounded-xl bg-brand-cream p-3 text-center text-sm text-brand-ink/80">
-          Payments coming soon. Your selected amount helps us estimate support demand while we finalize secure processing.
-        </p>
-        <p className="mt-3 text-center text-xs uppercase tracking-[0.12em] text-brand-ink/60">
-          We publish clear impact reporting so supporters can see where funds are used.
-        </p>
-      </section>
-    </div>
+              <p className="mt-6 rounded-xl bg-brand-cream/60 p-4 text-center text-sm leading-relaxed text-brand-ink/65">
+                Payments coming soon. Your selected amount helps us estimate support demand while we finalize secure processing.
+              </p>
+              <p className="mt-3 text-center text-xs uppercase tracking-[0.14em] text-brand-ink/45">
+                We publish clear impact reporting so supporters can see where funds are used.
+              </p>
+            </div>
+          </section>
+        </FadeInSection>
+      </div>
+    </>
   );
 }

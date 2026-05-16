@@ -5,11 +5,11 @@ type ButtonVariant = "primary" | "ghost" | "white";
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-forest text-white hover:bg-[#165a3f] focus-visible:outline-brand-forest",
+    "bg-brand-forest text-white hover:bg-brand-forest-dark focus-visible:outline-brand-forest shadow-sm hover:shadow-md",
   ghost:
-    "border border-current bg-transparent text-white/90 hover:bg-white/10 focus-visible:outline-white",
+    "border border-white/30 bg-white/5 text-white hover:bg-white/15 focus-visible:outline-white backdrop-blur-sm",
   white:
-    "bg-white text-brand-forest hover:bg-brand-cream focus-visible:outline-white",
+    "bg-white text-brand-forest hover:bg-brand-cream focus-visible:outline-white shadow-sm hover:shadow-md",
 };
 
 type Props = {
@@ -23,7 +23,7 @@ export function Button({ href, children, variant = "primary", className = "" }: 
   return (
     <Link
       href={href}
-      className={`inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${variantStyles[variant]} ${className}`}
+      className={`inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${variantStyles[variant]} ${className}`}
     >
       {children}
     </Link>

@@ -6,59 +6,75 @@ import { FadeInSection } from "@/components/ui/FadeInSection";
 
 function HomeIdentity() {
   return (
-    <section className="relative min-h-[620px] overflow-hidden bg-brand-ink">
+    <section className="relative min-h-[560px] overflow-hidden bg-brand-ink md:min-h-[600px]">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/optimized/DJI_0579.jpg')", filter: "brightness(1.1) saturate(1.14)" }}
+        style={{ backgroundImage: "url('/images/optimized/DJI_0579.jpg')" }}
       />
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#f8f5ef] to-transparent" />
+      <div className="absolute inset-0 bg-brand-ink/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-ink/70 via-brand-ink/40 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#f8f5ef] to-transparent" />
 
-      <div className="relative z-10 mx-auto flex min-h-[620px] w-full max-w-6xl items-center px-4 py-10 sm:px-6 md:py-12 lg:px-8">
-        <div className="relative w-full max-w-3xl">
-          <div className="absolute -inset-4 bg-brand-ink/45" aria-hidden="true" />
-          <div className="relative bg-brand-cream p-6 text-brand-ink shadow-[0_24px_90px_rgba(18,72,52,0.45)] ring-2 ring-white sm:p-8 lg:p-10">
-            <div className="pb-9">
-              <h1 className="mt-4 max-w-2xl font-display text-5xl leading-tight text-brand-ink md:text-6xl">
-                Practical hope for Jamaican communities.
-              </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-brand-ink md:text-xl">
-                We serve families through relief, education, health support, and community partnerships rooted in
-                dignity, recovery, and care.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link
-                  href="/missions"
-                  className="inline-flex rounded-full bg-brand-forest px-5 py-2.5 text-base font-bold text-white transition-colors hover:bg-[#165a3f]"
-                >
-                  Explore Missions
-                </Link>
-                <Link
-                  href="/take-action"
-                  className="inline-flex rounded-full border border-brand-forest/40 px-5 py-2.5 text-base font-bold text-brand-forest transition-colors hover:bg-brand-forest hover:text-white"
-                >
-                  Take Action
-                </Link>
-              </div>
-            </div>
-
-            <div className="grid gap-4 border-t border-brand-forest/20 pt-6 md:grid-cols-2">
-              <article>
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-brand-forest">Mission Statement</p>
-                <p className="mt-2 max-w-xl text-base leading-relaxed text-brand-ink">
-                  Provide compassionate relief, family support, youth encouragement, and community partnership for
-                  underserved communities across Jamaica.
-                </p>
-              </article>
-              <article>
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-brand-forest">Vision Statement</p>
-                <p className="mt-2 max-w-xl text-base leading-relaxed text-brand-ink">
-                  A Jamaica where families, youth, and local leaders have the support, resources, and relationships
-                  needed to recover, grow, and thrive.
-                </p>
-              </article>
-            </div>
+      <div className="relative z-10 mx-auto flex min-h-[560px] w-full max-w-6xl flex-col justify-between px-4 py-12 text-white sm:px-6 md:min-h-[600px] md:py-16 lg:px-8">
+        <div className="flex max-w-xl items-center gap-4">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/15 font-display text-lg text-white backdrop-blur-sm">
+            BI
+          </div>
+          <div>
+            <p className="font-display text-xl leading-tight sm:text-2xl">Block Island Hope for Jamaica</p>
+            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
+              Charity Foundation
+            </p>
           </div>
         </div>
+
+        <div className="max-w-3xl py-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Foundation Purpose</p>
+          <h1 className="mt-5 max-w-2xl font-display text-4xl leading-[1.08] tracking-tight md:text-5xl lg:text-6xl">
+            Practical hope for Jamaican communities.
+          </h1>
+          <p className="mt-6 max-w-[50ch] text-base leading-relaxed text-white/90 md:text-lg">
+            We serve families through relief, education, health support, and community partnerships rooted in dignity,
+            recovery, and care.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link
+              href="/missions"
+              className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-forest shadow-sm transition-all duration-200 hover:bg-brand-cream hover:shadow-md"
+            >
+              Explore Missions
+            </Link>
+            <Link
+              href="/take-action"
+              className="inline-flex rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/20"
+            >
+              Take Action
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function MissionVision() {
+  return (
+    <section className="border-b border-brand-forest/10 bg-brand-cream">
+      <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 md:gap-16 md:py-20 lg:px-8">
+        <article>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-forest">Mission</p>
+          <p className="mt-4 font-display text-2xl leading-[1.3] tracking-tight text-brand-ink md:text-3xl">
+            Provide compassionate relief, family support, youth encouragement, and community partnership for
+            underserved communities across Jamaica.
+          </p>
+        </article>
+        <article>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-forest">Vision</p>
+          <p className="mt-4 font-display text-2xl leading-[1.3] tracking-tight text-brand-ink md:text-3xl">
+            A Jamaica where families, youth, and local leaders have the support, resources, and relationships needed
+            to recover, grow, and thrive.
+          </p>
+        </article>
       </div>
     </section>
   );
@@ -70,10 +86,11 @@ export default function HomePage() {
   return (
     <>
       <HomeIdentity />
+      <MissionVision />
       <FadeInSection>
         <WhereWeWorkMap mapboxToken={mapboxToken} />
       </FadeInSection>
-      <FadeInSection>
+      <FadeInSection delay={100}>
         <PageGrid />
       </FadeInSection>
     </>
