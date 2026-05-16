@@ -1,10 +1,10 @@
 import { ImpactStat } from "@/types/content";
 
 export const impactStats: ImpactStat[] = [
-  { label: "People Served", value: "6,800+" },
-  { label: "Events Held", value: "142" },
-  { label: "Communities Reached", value: "34" },
-  { label: "Volunteers Active", value: "210" },
+  { label: "People Served", value: "2,000+" },
+  { label: "Communities Reached", value: "15" },
+  { label: "Active Volunteers", value: "50" },
+  { label: "Events Held", value: "To Be Determined" },
 ];
 
 export const donationAllocation = [
