@@ -22,9 +22,14 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-brand-forest/10 bg-[#f8f5ef]/95 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="flex flex-col font-display text-xl leading-tight text-brand-forest">
-          <span>Block Island Hope for Jamaica</span>
-          <span className="text-xs font-medium">Charity Foundation</span>
+        <Link href="/" className="flex items-center gap-3 text-brand-forest">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-brand-forest/35 bg-brand-cream font-display text-lg leading-none">
+            BI
+          </span>
+          <span className="flex flex-col font-display text-xl leading-tight">
+            <span>Block Island Hope for Jamaica</span>
+            <span className="text-xs font-medium">Charity Foundation</span>
+          </span>
         </Link>
         <nav className="hidden items-center gap-5 md:flex">
           {navItems.map((item) => {

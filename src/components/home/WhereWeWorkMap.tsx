@@ -62,6 +62,10 @@ export function WhereWeWorkMap({
   const [activeEventId, setActiveEventId] = useState(defaultEvent.id);
   const [popupEventId, setPopupEventId] = useState<string | null>(null);
   const activeEvent = outreachEvents.find((event) => event.id === activeEventId) ?? defaultEvent;
+  const activeEventIndex = Math.max(
+    outreachEvents.findIndex((event) => event.id === activeEvent.id),
+    0,
+  );
   const popupEvent = outreachEvents.find((event) => event.id === popupEventId) ?? null;
 
   function handleMove(event: ViewStateChangeEvent) {
@@ -90,6 +94,16 @@ export function WhereWeWorkMap({
     setActiveEventId(eventId);
     setFocusedViewState(nextView);
     focusedMapRef.current?.flyTo({ ...nextView, duration: 650, essential: true });
+  }
+
+  function showPreviousEvent() {
+    const nextIndex = (activeEventIndex - 1 + outreachEvents.length) % outreachEvents.length;
+    selectEvent(outreachEvents[nextIndex].id);
+  }
+
+  function showNextEvent() {
+    const nextIndex = (activeEventIndex + 1) % outreachEvents.length;
+    selectEvent(outreachEvents[nextIndex].id);
   }
 
   function openPopup(eventId: string) {
@@ -129,23 +143,21 @@ export function WhereWeWorkMap({
   }, []);
 
   return (
-    <section id={sectionId} className="min-h-[100svh] bg-brand-cream">
-      <div className="px-4 pb-6 pt-10 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow={eyebrow}
-          title={title}
-          description={description}
-        />
+    <section id={sectionId} className="bg-brand-cream">
+      <div className="px-4 pb-4 pt-10 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-6xl">
+          <SectionHeading eyebrow={eyebrow} title={title} description={description} />
+        </div>
       </div>
 
       <div className="px-4 pb-10 sm:px-6 lg:px-8">
-        <div className="mx-auto grid w-full max-w-6xl gap-6 lg:grid-cols-[minmax(0,1.45fr)_minmax(320px,0.75fr)] lg:items-start">
+        <div className="mx-auto grid w-full max-w-6xl gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(330px,0.8fr)] lg:items-start">
           <div>
-            <div className="mb-4">
+            <div className="mb-3">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-forest">Jamaica Overview</p>
               <h3 className="mt-1 font-display text-2xl leading-tight text-brand-ink">National mission footprint</h3>
             </div>
-            <div className="relative h-[56svh] min-h-[380px] overflow-hidden lg:h-[650px]">
+            <div className="relative h-[54svh] min-h-[340px] overflow-hidden lg:h-[560px]">
               {mapboxToken ? (
                 <Map
                   {...viewState}
@@ -236,16 +248,16 @@ export function WhereWeWorkMap({
             </div>
           </div>
 
-          <div className="space-y-5">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-forest">Community Focus</p>
+          <div className="space-y-4">
+            <div className="mb-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-forest">Community Spotlight</p>
               <h3 className="mt-1 font-display text-2xl leading-tight text-brand-ink">{activeEvent.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-brand-ink/75">
-                Select a marker or location to move from national reach into community-level context.
+                Move through each outreach story to see national reach and community-level context together.
               </p>
             </div>
 
-            <div className="relative h-[300px] overflow-hidden md:h-[360px] lg:h-[330px]">
+            <div className="relative h-[260px] overflow-hidden md:h-[300px] lg:h-[240px]">
               {mapboxToken ? (
                 <Map
                   {...focusedViewState}
@@ -277,43 +289,54 @@ export function WhereWeWorkMap({
               )}
             </div>
 
-            <article className="border-l border-brand-forest/25 pl-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-forest/70">Selected area</p>
+            <article className="border-l border-brand-forest/25 pl-4">
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-forest/70">
+                  Featured Location
+                </p>
+                <p className="text-xs font-semibold text-brand-ink/55">
+                  {activeEventIndex + 1} / {outreachEvents.length}
+                </p>
+              </div>
               <p className="mt-2 text-sm leading-snug text-brand-ink/80">{activeEvent.location}</p>
-              <p className="mt-3 text-sm leading-relaxed text-brand-ink/85">{activeEvent.summary}</p>
+              <p className="mt-2 text-sm leading-relaxed text-brand-ink/85">{activeEvent.summary}</p>
               <Link
                 href={`${detailHrefBase}/${activeEvent.slug}`}
-                className="mt-4 inline-flex border-b border-brand-forest/35 pb-1 text-sm font-semibold text-brand-forest transition-colors hover:text-brand-ink"
+                className="mt-3 inline-flex border-b border-brand-forest/35 pb-1 text-sm font-semibold text-brand-forest transition-colors hover:text-brand-ink"
               >
                 {detailLinkLabel}
               </Link>
             </article>
 
-            <div className="border-t border-brand-forest/15 pt-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-ink/60">Locations</p>
-              <div className="mt-3 space-y-2">
-                {outreachEvents.map((event) => (
-                  <Link
-                    key={event.id}
-                    href={`${detailHrefBase}/${event.slug}`}
-                    onMouseEnter={() => selectEvent(event.id)}
-                    onFocus={() => selectEvent(event.id)}
-                    className={`group flex w-full items-start justify-between gap-3 border-l px-3 py-2 text-left text-sm transition-colors focus-visible:outline-none ${
-                      activeEventId === event.id
-                        ? "border-brand-forest bg-white/65 text-brand-forest"
-                        : "border-brand-forest/15 text-brand-ink/80 hover:border-brand-forest/45 hover:bg-white/45 hover:text-brand-forest focus-visible:text-brand-forest"
-                    }`}
-                  >
-                    <span>
-                      <span className="block font-semibold leading-tight">{event.title}</span>
-                      <span className="mt-1 block text-xs text-current/75">{event.location}</span>
-                    </span>
-                    <span
-                      className={`mt-1 h-2.5 w-2.5 shrink-0 rounded-full ${markerColors[event.type]}`}
-                      aria-hidden="true"
+            <div className="border-t border-brand-forest/15 pt-4">
+              <div className="flex items-center justify-between gap-3">
+                <button
+                  type="button"
+                  onClick={showPreviousEvent}
+                  className="inline-flex rounded-full border border-brand-forest/30 px-4 py-2 text-sm font-semibold text-brand-forest transition-colors hover:bg-brand-forest hover:text-white"
+                >
+                  Previous
+                </button>
+                <div className="flex items-center gap-1.5" aria-label="Community spotlight progress">
+                  {outreachEvents.map((event, index) => (
+                    <button
+                      key={event.id}
+                      type="button"
+                      onClick={() => selectEvent(event.id)}
+                      className={`h-2.5 rounded-full transition-all ${
+                        index === activeEventIndex ? "w-7 bg-brand-forest" : "w-2.5 bg-brand-forest/25 hover:bg-brand-forest/45"
+                      }`}
+                      aria-label={`Show ${event.title}`}
                     />
-                  </Link>
-                ))}
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  onClick={showNextEvent}
+                  className="inline-flex rounded-full bg-brand-forest px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#165a3f]"
+                >
+                  Next
+                </button>
               </div>
             </div>
           </div>
