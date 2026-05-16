@@ -18,8 +18,8 @@ type RingNode = {
 const ringNodes: RingNode[] = [
   {
     id: "prog-1",
-    label: "Community Outreach",
-    shortLabel: "Outreach",
+    label: "Humanitarian Relief",
+    shortLabel: "Relief",
     top: "6%",
     left: "50%",
     color: "bg-brand-forest",
@@ -27,8 +27,8 @@ const ringNodes: RingNode[] = [
   },
   {
     id: "prog-2",
-    label: "Mobile Medical Missions",
-    shortLabel: "Medical",
+    label: "Youth & Education",
+    shortLabel: "Youth",
     top: "50%",
     left: "94%",
     color: "bg-brand-navy",
@@ -36,8 +36,8 @@ const ringNodes: RingNode[] = [
   },
   {
     id: "prog-3",
-    label: "Feeding & Nutrition Support",
-    shortLabel: "Feeding",
+    label: "Health & Family Support",
+    shortLabel: "Health",
     top: "94%",
     left: "50%",
     color: "bg-brand-amber",
@@ -45,8 +45,8 @@ const ringNodes: RingNode[] = [
   },
   {
     id: "prog-4",
-    label: "Volunteer Capacity Building",
-    shortLabel: "Volunteer",
+    label: "Community Development",
+    shortLabel: "Community",
     top: "50%",
     left: "6%",
     color: "bg-brand-coral",

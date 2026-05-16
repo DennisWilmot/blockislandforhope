@@ -4,6 +4,7 @@ const footerLinks = [
   { href: "/our-story", label: "Our Story" },
   { href: "/what-we-do", label: "What We Do" },
   { href: "/impact", label: "Impact" },
+  { href: "/missions", label: "Missions" },
   { href: "/take-action", label: "Take Action" },
   { href: "/updates", label: "Updates" },
   { href: "/contact", label: "Contact" },

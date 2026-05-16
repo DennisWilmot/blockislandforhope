@@ -8,11 +8,11 @@ const roadmapSteps = [
     title: "Inception",
     period: "Where it started",
     description:
-      "Block Island Hope for Jamaica began with small neighborhood visits and simple care deliveries led by committed local volunteers.",
+      "The mission began in the wake of hurricane damage, as recovery efforts and the repair of one home revealed a wider call to serve.",
     points: [
-      "A relationship-first model rooted in listening",
-      "Early outreach focused on families, elders, and school-age children",
-      "Community trust was built household by household",
+      "Hurricane damage exposed urgent needs for repair and recovery",
+      "Volunteers rallied around one home and one family at a time",
+      "That first response grew into a broader mission of practical hope",
     ],
     videoUrl: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
   },
@@ -91,18 +91,45 @@ export default function OurStoryPage() {
             {roadmapSteps.map((step, index) => (
               <article key={step.id} className="grid gap-6 md:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_3rem_minmax(0,1fr)] lg:items-center">
                 <div className={index % 2 === 0 ? "lg:order-1" : "lg:order-3"}>
-                  <video
-                    className="h-[240px] w-full object-cover md:h-[300px] lg:h-[280px]"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    controls
-                    preload="metadata"
-                    aria-label={`${step.title} roadmap video`}
-                  >
-                    <source src={step.videoUrl} type="video/mp4" />
-                  </video>
+                  {step.id === "01" ? (
+                    <div className="group relative h-[240px] w-full overflow-hidden bg-brand-ink md:h-[300px] lg:h-[280px]">
+                      <Image
+                        src="/images/optimized/DSC02811.jpg"
+                        alt="Inception story video placeholder showing the early recovery mission"
+                        fill
+                        className="object-cover opacity-75 transition duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/85 via-brand-ink/35 to-brand-ink/20" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/20 text-2xl text-white backdrop-blur-sm transition group-hover:bg-white/30">
+                          ▶
+                        </span>
+                      </div>
+                      <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/75">
+                          Documentary Segment
+                        </p>
+                        <p className="mt-2 font-display text-2xl leading-tight">Inception Story — Coming Soon</p>
+                        <p className="mt-2 max-w-md text-sm text-white/85">
+                          Hurricane damage, recovery efforts, and the home repair that sparked the response mission.
+                        </p>
+                      </div>
+                    </div>
+                  ) : (
+                    <video
+                      className="h-[240px] w-full object-cover md:h-[300px] lg:h-[280px]"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      controls
+                      preload="metadata"
+                      aria-label={`${step.title} roadmap video`}
+                    >
+                      <source src={step.videoUrl} type="video/mp4" />
+                    </video>
+                  )}
                 </div>
 
                 <div className="hidden lg:order-2 lg:flex lg:justify-center">

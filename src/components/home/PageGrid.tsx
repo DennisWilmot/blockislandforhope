@@ -17,7 +17,7 @@ const tiles: Tile[] = [
     title: "Our Story",
     description: "How a local vision grew into a movement of practical hope.",
     imageUrl: "/images/optimized/DJI_0579.jpg",
-    overlay: "from-brand-forest/85 via-brand-forest/45 to-brand-ink/70",
+    overlay: "from-brand-forest/65 via-brand-forest/25 to-brand-ink/52",
   },
   {
     href: "/what-we-do",
@@ -25,35 +25,35 @@ const tiles: Tile[] = [
     description: "Explore the programmes serving families, youth, and seniors.",
     imageUrl: "/images/optimized/DSC02874.jpg",
     imagePosition: "center 28%",
-    overlay: "from-brand-navy/85 via-brand-navy/45 to-brand-ink/70",
+    overlay: "from-brand-navy/65 via-brand-navy/25 to-brand-ink/52",
   },
   {
     href: "/impact",
     title: "Impact",
     description: "See outcomes, numbers, and stories from the field.",
     imageUrl: "/images/optimized/DJI_0530.jpg",
-    overlay: "from-brand-amber/85 via-brand-amber/45 to-brand-ink/70",
+    overlay: "from-brand-amber/65 via-brand-amber/25 to-brand-ink/52",
   },
   {
     href: "/take-action",
     title: "Take Action",
     description: "Choose your path: donate, volunteer, partner, or contribute.",
     imageUrl: "/images/optimized/DJI_0502.jpg",
-    overlay: "from-brand-coral/85 via-brand-coral/45 to-brand-ink/70",
+    overlay: "from-brand-coral/65 via-brand-coral/25 to-brand-ink/52",
   },
   {
     href: "/updates",
     title: "Updates",
     description: "Read event recaps and follow where outreach is happening.",
     imageUrl: "/images/optimized/DSC02671.jpg",
-    overlay: "from-brand-forest/85 via-brand-forest/45 to-brand-ink/70",
+    overlay: "from-brand-forest/65 via-brand-forest/25 to-brand-ink/52",
   },
   {
     href: "/contact",
     title: "Contact",
     description: "Reach our team to ask, connect, or collaborate.",
     imageUrl: "/images/optimized/DSC02811.jpg",
-    overlay: "from-brand-navy/85 via-brand-navy/45 to-brand-ink/70",
+    overlay: "from-brand-navy/65 via-brand-navy/25 to-brand-ink/52",
   },
 ];
 
@@ -76,7 +76,11 @@ export function PageGrid() {
           >
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-              style={{ backgroundImage: `url(${tile.imageUrl})`, backgroundPosition: tile.imagePosition ?? "center" }}
+              style={{
+                backgroundImage: `url(${tile.imageUrl})`,
+                backgroundPosition: tile.imagePosition ?? "center",
+                filter: "brightness(1.08) saturate(1.12)",
+              }}
             />
             <div className={`absolute inset-0 bg-gradient-to-br ${tile.overlay}`} />
             <span className="sparkle-dot absolute left-[16%] top-[20%] h-1.5 w-1.5 rounded-full bg-white/75" />

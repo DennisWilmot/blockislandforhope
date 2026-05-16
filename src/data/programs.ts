@@ -3,34 +3,34 @@ import { Program } from "@/types/content";
 export const programs: Program[] = [
   {
     id: "prog-1",
-    name: "Community Outreach Days",
+    name: "Humanitarian Relief",
     description:
-      "Our outreach teams partner with local leaders to host practical support days focused on family care, youth development, and household resilience.",
-    beneficiaries: "Families, youth, and seniors in vulnerable districts",
+      "Rapid, practical support for families facing urgent needs, including food, supplies, and relief coordination.",
+    beneficiaries: "Families and seniors facing urgent hardship",
     supportHref: "/take-action",
   },
   {
     id: "prog-2",
-    name: "Mobile Medical Missions",
+    name: "Youth & Education",
     description:
-      "Clinicians and volunteers bring basic healthcare services to communities where travel, cost, and access create barriers to regular medical care.",
-    beneficiaries: "Rural residents, mothers, and elders with limited access",
+      "School visits, youth encouragement, and learning support that help children feel seen, prepared, and valued.",
+    beneficiaries: "Students, teachers, and youth groups",
     supportHref: "/take-action",
   },
   {
     id: "prog-3",
-    name: "Feeding & Nutrition Support",
+    name: "Health & Family Support",
     description:
-      "From emergency meal distribution to recurring food baskets, this programme helps households stay nourished while building practical nutrition knowledge.",
-    beneficiaries: "Food-insecure households, children, and caregivers",
+      "Care-focused outreach that supports household wellness, basic health access, and family stability.",
+    beneficiaries: "Parents, caregivers, children, and elders",
     supportHref: "/take-action",
   },
   {
     id: "prog-4",
-    name: "Volunteer Capacity Building",
+    name: "Community Development",
     description:
-      "We train local volunteers in safeguarding, care coordination, and community logistics so support remains consistent beyond one-day events.",
-    beneficiaries: "Church teams, youth groups, and local organisers",
+      "Local partnerships and volunteer coordination that strengthen communities beyond a single outreach day.",
+    beneficiaries: "Community partners, volunteers, and local leaders",
     supportHref: "/take-action",
   },
 ];

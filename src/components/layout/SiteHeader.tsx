@@ -10,6 +10,7 @@ const navItems = [
   { href: "/our-story", label: "Our Story" },
   { href: "/what-we-do", label: "What We Do" },
   { href: "/impact", label: "Impact" },
+  { href: "/missions", label: "Missions" },
   { href: "/take-action", label: "Take Action" },
   { href: "/updates", label: "Updates" },
   { href: "/contact", label: "Contact" },
@@ -21,8 +22,9 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-brand-forest/10 bg-[#f8f5ef]/95 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="font-display text-xl text-brand-forest">
-          Block Island Hope for Jamaica
+        <Link href="/" className="flex flex-col font-display text-xl leading-tight text-brand-forest">
+          <span>Block Island Hope for Jamaica</span>
+          <span className="text-xs font-medium">Charity Foundation</span>
         </Link>
         <nav className="hidden items-center gap-5 md:flex">
           {navItems.map((item) => {
