@@ -7,8 +7,8 @@ export default function WhatWeDoPage() {
       <section className="mx-auto w-full max-w-6xl">
         <SectionHeading
           eyebrow="What We Do"
-          title="Programmes in a living circle"
-          description="Tap any focus on the ring to explore how each programme serves communities across Jamaica."
+          title="Core areas of focus"
+          description="Explore the four focus areas guiding how we serve communities across Jamaica."
         />
         <ProgramRing />
       </section>
