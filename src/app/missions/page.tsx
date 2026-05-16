@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { HeroCarousel } from "@/components/home/HeroCarousel";
+import { WhereWeWorkMap } from "@/components/home/WhereWeWorkMap";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { eventTypeStyles, outreachEvents } from "@/data/events";
 import { formatLongDate } from "@/lib/format";
@@ -35,6 +36,7 @@ const missionUpdates = [
 ];
 
 export default function MissionsPage() {
+  const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? process.env.MAPBOX_TOKEN ?? "";
   const missionStories = [...outreachEvents].sort((a, b) => (a.isoDate < b.isoDate ? 1 : -1));
 
   return (
@@ -101,6 +103,16 @@ export default function MissionsPage() {
           </article>
         </section>
       </div>
+
+      <WhereWeWorkMap
+        mapboxToken={mapboxToken}
+        sectionId="mission-locations"
+        eyebrow="Mission Map"
+        title="Track mission locations across Jamaica"
+        description="Explore outreach locations connected to mission stories, field visits, and community impact."
+        detailHrefBase="/missions"
+        detailLinkLabel="Read mission story"
+      />
 
       <div className="px-4 pb-14 sm:px-6 lg:px-8">
         <section id="mission-stories" className="mx-auto w-full max-w-6xl scroll-mt-24">

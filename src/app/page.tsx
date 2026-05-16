@@ -9,9 +9,9 @@ function HomeIdentity() {
     <section className="relative min-h-[620px] overflow-hidden bg-brand-ink">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/optimized/DJI_0579.jpg')" }}
+        style={{ backgroundImage: "url('/images/optimized/DJI_0579.jpg')", filter: "brightness(1.1) saturate(1.14)" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-ink/92 via-brand-ink/70 to-brand-forest/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-ink/78 via-brand-ink/52 to-brand-forest/15" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#f8f5ef] to-transparent" />
 
       <div className="relative z-10 mx-auto flex min-h-[620px] w-full max-w-6xl flex-col justify-between px-4 py-10 text-white sm:px-6 md:py-12 lg:px-8">
