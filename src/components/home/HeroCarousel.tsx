@@ -8,7 +8,27 @@ import { outreachEvents } from "@/data/events";
 
 const autoAdvanceMs = 4500;
 
-export function HeroCarousel() {
+type Props = {
+  detailHrefBase?: string;
+  primaryHref?: string;
+  secondaryHref?: string;
+  eyebrow?: string;
+  title?: string;
+  summary?: string;
+  primaryCtaLabel?: string;
+  secondaryCtaLabel?: string;
+};
+
+export function HeroCarousel({
+  detailHrefBase = "/updates",
+  primaryHref,
+  secondaryHref = "#where-we-work",
+  eyebrow,
+  title,
+  summary,
+  primaryCtaLabel = "See the impact",
+  secondaryCtaLabel = "View on map",
+}: Props) {
   const slides = useMemo(
     () =>
       outreachEvents
@@ -57,18 +77,22 @@ export function HeroCarousel() {
       <div className="relative z-10 mx-auto flex h-full w-full max-w-6xl flex-col justify-between px-4 py-10 text-white sm:px-6 md:py-14 lg:px-8">
         <div className="max-w-3xl">
           <span className="inline-flex rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white">
-            {activeSlide.dateLabel}
+            {eyebrow ?? activeSlide.dateLabel}
           </span>
           <h1 className="mt-5 font-display text-4xl leading-tight md:text-6xl">
-            {activeSlide.title} <span className="text-white/80">({activeSlide.location})</span>
+            {title ?? (
+              <>
+                {activeSlide.title} <span className="text-white/80">({activeSlide.location})</span>
+              </>
+            )}
           </h1>
-          <p className="mt-5 max-w-2xl text-base text-white/90 md:text-lg">{activeSlide.summary}</p>
+          <p className="mt-5 max-w-2xl text-base text-white/90 md:text-lg">{summary ?? activeSlide.summary}</p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button href={`/updates/${activeSlide.slug}`} variant="white">
-              See the impact
+            <Button href={primaryHref ?? `${detailHrefBase}/${activeSlide.slug}`} variant="white">
+              {primaryCtaLabel}
             </Button>
-            <Button href="#where-we-work" variant="ghost">
-              View on map
+            <Button href={secondaryHref} variant="ghost">
+              {secondaryCtaLabel}
             </Button>
           </div>
         </div>
@@ -114,7 +138,7 @@ export function HeroCarousel() {
         </p>
       </div>
       <Link
-        href={`/updates/${activeSlide.slug}`}
+        href={`${detailHrefBase}/${activeSlide.slug}`}
         className="absolute inset-0 z-0"
         tabIndex={-1}
         aria-label={`Open recap for ${activeSlide.title}`}
