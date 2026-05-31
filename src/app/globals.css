@@ -92,9 +92,25 @@ body {
   color: rgba(34, 49, 40, 0.95);
 }
 
+@keyframes kenBurns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.animate-ken-burns {
+  animation-name: kenBurns;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .program-pop,
-  .animate-fade-up {
+  .animate-fade-up,
+  .animate-ken-burns {
     animation: none;
   }
 }

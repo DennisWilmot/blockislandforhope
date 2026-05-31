@@ -3,28 +3,29 @@ import Link from "next/link";
 import { OutreachRecapTeaser } from "@/components/home/OutreachRecapTeaser";
 import { PageGrid } from "@/components/home/PageGrid";
 import { WhereWeWorkMap } from "@/components/home/WhereWeWorkMap";
+import { HeroSlideshow } from "@/components/ui/HeroSlideshow";
 import { FadeInSection } from "@/components/ui/FadeInSection";
+import { HOME_HERO_SLIDES } from "@/data/hero-slides";
 
 function HomeIdentity() {
   return (
-    <section className="relative min-h-[560px] overflow-hidden bg-brand-ink md:min-h-[600px]">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/optimized/DJI_0579.jpg')" }}
-      />
-      <div className="absolute inset-0 bg-brand-ink/60" />
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-ink/70 via-brand-ink/40 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#f8f5ef] to-transparent" />
+    <section className="relative min-h-[672px] overflow-hidden bg-brand-ink md:min-h-[720px]">
+      <HeroSlideshow slides={HOME_HERO_SLIDES} />
+      <div className="absolute inset-0 z-[1] bg-brand-ink/60" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-brand-ink/70 via-brand-ink/40 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 z-[1] h-12 bg-gradient-to-t from-[#f8f5ef] to-transparent" />
 
-      <div className="relative z-10 mx-auto flex min-h-[560px] w-full max-w-6xl flex-col justify-end px-4 py-12 text-white sm:px-6 md:min-h-[600px] md:py-16 lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-[672px] w-full max-w-6xl flex-col justify-end px-4 py-12 text-white sm:px-6 md:min-h-[720px] md:py-16 lg:px-8">
         <div className="max-w-3xl py-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Foundation Purpose</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+            Charity Foundation · Est. 2024
+          </p>
           <h1 className="mt-5 max-w-2xl font-display text-4xl leading-[1.08] tracking-tight md:text-5xl lg:text-6xl">
-            Practical hope for Jamaican communities.
+            Block Island Hope for Jamaica
           </h1>
           <p className="mt-6 max-w-[50ch] text-base leading-relaxed text-white/90 md:text-lg">
-            Founded in 2024, we serve families through relief, education, health support, and community partnerships
-            rooted in dignity, recovery, and care.
+            Practical hope for Jamaican communities — through relief, education, health support, and community
+            partnerships rooted in dignity, recovery, and care.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link

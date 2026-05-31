@@ -8,6 +8,7 @@ import { YouTubeEmbed } from "@/components/ui/YouTubeEmbed";
 import { WhereWeWorkMap } from "@/components/home/WhereWeWorkMap";
 import { eventTypeStyles, outreachEvents } from "@/data/events";
 import { TRIP_RECAP_VIDEO_ID } from "@/data/site-media";
+import { WHAT_WE_DO_HERO_SLIDES } from "@/data/hero-slides";
 import { formatLongDate } from "@/lib/format";
 
 export default function WhatWeDoPage() {
@@ -20,7 +21,7 @@ export default function WhatWeDoPage() {
         eyebrow="What We Do"
         title="Outreach across Jamaica"
         description="From community visits to school support — explore our recent field work, day by day."
-        imageUrl="/images/optimized/DJI_0530.jpg"
+        slides={WHAT_WE_DO_HERO_SLIDES}
       />
 
       <section id="recap" className="scroll-mt-24 border-b border-brand-forest/10 bg-brand-cream px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
