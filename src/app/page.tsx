@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { OutreachRecapTeaser } from "@/components/home/OutreachRecapTeaser";
 import { PageGrid } from "@/components/home/PageGrid";
 import { WhereWeWorkMap } from "@/components/home/WhereWeWorkMap";
 import { FadeInSection } from "@/components/ui/FadeInSection";
@@ -15,34 +16,22 @@ function HomeIdentity() {
       <div className="absolute inset-0 bg-gradient-to-r from-brand-ink/70 via-brand-ink/40 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#f8f5ef] to-transparent" />
 
-      <div className="relative z-10 mx-auto flex min-h-[560px] w-full max-w-6xl flex-col justify-between px-4 py-12 text-white sm:px-6 md:min-h-[600px] md:py-16 lg:px-8">
-        <div className="flex max-w-xl items-center gap-4">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/15 font-display text-lg text-white backdrop-blur-sm">
-            BI
-          </div>
-          <div>
-            <p className="font-display text-xl leading-tight sm:text-2xl">Block Island Hope for Jamaica</p>
-            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
-              Charity Foundation
-            </p>
-          </div>
-        </div>
-
+      <div className="relative z-10 mx-auto flex min-h-[560px] w-full max-w-6xl flex-col justify-end px-4 py-12 text-white sm:px-6 md:min-h-[600px] md:py-16 lg:px-8">
         <div className="max-w-3xl py-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Foundation Purpose</p>
           <h1 className="mt-5 max-w-2xl font-display text-4xl leading-[1.08] tracking-tight md:text-5xl lg:text-6xl">
             Practical hope for Jamaican communities.
           </h1>
           <p className="mt-6 max-w-[50ch] text-base leading-relaxed text-white/90 md:text-lg">
-            We serve families through relief, education, health support, and community partnerships rooted in dignity,
-            recovery, and care.
+            Founded in 2024, we serve families through relief, education, health support, and community partnerships
+            rooted in dignity, recovery, and care.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
-              href="/missions"
+              href="/what-we-do"
               className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-forest shadow-sm transition-all duration-200 hover:bg-brand-cream hover:shadow-md"
             >
-              Explore Missions
+              See Our Outreach
             </Link>
             <Link
               href="/take-action"
@@ -88,7 +77,14 @@ export default function HomePage() {
       <HomeIdentity />
       <MissionVision />
       <FadeInSection>
-        <WhereWeWorkMap mapboxToken={mapboxToken} />
+        <OutreachRecapTeaser />
+      </FadeInSection>
+      <FadeInSection>
+        <WhereWeWorkMap
+          mapboxToken={mapboxToken}
+          detailHrefBase="/what-we-do"
+          detailLinkLabel="Read outreach story"
+        />
       </FadeInSection>
       <FadeInSection delay={100}>
         <PageGrid />

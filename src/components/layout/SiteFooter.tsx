@@ -1,14 +1,25 @@
+import Image from "next/image";
 import Link from "next/link";
 
-const footerLinks = [
-  { href: "/our-story", label: "Our Story" },
-  { href: "/what-we-do", label: "What We Do" },
-  { href: "/impact", label: "Impact" },
-  { href: "/missions", label: "Missions" },
-  { href: "/take-action", label: "Take Action" },
-  { href: "/updates", label: "Updates" },
-  { href: "/contact", label: "Contact" },
+import { Button } from "@/components/ui/Button";
+
+const emergencyResources = [
+  {
+    href: "https://www.odpem.org.jm/",
+    label: "ODPEM — Disaster Preparedness",
+  },
+  {
+    href: "https://www.odpem.org.jm/contact",
+    label: "Report an Emergency",
+  },
+  {
+    href: "https://www.jamaica.gov.jm/",
+    label: "Government of Jamaica",
+  },
 ];
+
+/** Add affiliated churches and partner orgs as they are confirmed. */
+const partnerLinks: { href: string; label: string }[] = [];
 
 const socialLinks = [
   { href: "https://instagram.com", label: "Instagram" },
@@ -18,53 +29,115 @@ const socialLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-brand-ink px-4 pt-16 pb-10 text-white sm:px-6 lg:px-8">
-      <div className="mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-3 md:gap-8">
-        <div>
-          <p className="font-display text-2xl leading-tight tracking-tight">Block Island Hope for Jamaica</p>
-          <p className="mt-4 max-w-[34ch] text-sm leading-relaxed text-white/70">
-            Rooted in compassion, we serve Jamaican communities through practical outreach, healthcare access, and
-            nourishment.
-          </p>
+    <footer className="bg-brand-ink px-4 pt-12 pb-10 text-white sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-6xl">
+        <div className="flex flex-col gap-6 border-b border-white/10 pb-10 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Stand With Jamaica</p>
+            <h2 className="mt-2 max-w-xl font-display text-2xl leading-tight tracking-tight sm:text-3xl">
+              Help us reach the next community with hope
+            </h2>
+          </div>
+          <div className="flex shrink-0 flex-wrap gap-3">
+            <Button href="/donate" variant="primary" className="min-w-[130px]">
+              Donate
+            </Button>
+            <Button href="/take-action" variant="ghost" className="min-w-[130px]">
+              Volunteer
+            </Button>
+          </div>
         </div>
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Navigate</p>
-          <ul className="mt-5 space-y-3">
-            {footerLinks.map((item) => (
-              <li key={item.href}>
+
+        <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <Image
+              src="/logo.png"
+              alt="Block Island Hope for Jamaica"
+              width={140}
+              height={140}
+              className="h-24 w-auto brightness-0 invert"
+            />
+            <p className="mt-4 max-w-[34ch] text-sm leading-relaxed text-white/70">
+              Rooted in compassion, we serve Jamaican communities through practical outreach, healthcare access, and
+              nourishment.
+            </p>
+            <p className="mt-3 text-xs font-medium uppercase tracking-[0.16em] text-white/45">Est. 2024</p>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Emergency Resources</p>
+            <ul className="mt-5 space-y-3">
+              {emergencyResources.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm text-white/75 transition-colors duration-200 hover:text-white"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Partners & Affiliations</p>
+            {partnerLinks.length > 0 ? (
+              <ul className="mt-5 space-y-3">
+                {partnerLinks.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sm text-white/75 transition-colors duration-200 hover:text-white"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="mt-5 text-sm leading-relaxed text-white/60">
+                Affiliated churches and partner organizations will be listed here as partnerships are confirmed.
+              </p>
+            )}
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Connect</p>
+            <ul className="mt-5 space-y-3">
+              <li>
                 <Link
-                  href={item.href}
+                  href="/contact"
                   className="text-sm text-white/75 transition-colors duration-200 hover:text-white"
                 >
-                  {item.label}
+                  Contact
                 </Link>
               </li>
-            ))}
-          </ul>
+              {socialLinks.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm text-white/75 transition-colors duration-200 hover:text-white"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Connect</p>
-          <ul className="mt-5 space-y-3">
-            {socialLinks.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm text-white/75 transition-colors duration-200 hover:text-white"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
 
-      <div className="mx-auto mt-16 w-full max-w-6xl border-t border-white/8 pt-6">
-        <p className="text-xs text-white/45">
-          &copy; {new Date().getFullYear()} Block Island Hope for Jamaica. All rights reserved.
-        </p>
+        <div className="mt-12 border-t border-white/10 pt-6">
+          <p className="text-xs text-white/45">
+            &copy; {new Date().getFullYear()} Block Island Hope for Jamaica. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

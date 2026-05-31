@@ -4,22 +4,27 @@ export const outreachEvents: OutreachEvent[] = [
   {
     id: "evt-001",
     slug: "vineyards-black-river-day-1",
-    title: "Outreach Day 1 - Vineyards Community",
-    location: "Vineyard & Pondside Primary, St. Elizabeth, Jamaica",
+    title: "Outreach Day 1 — Vineyard & Pondside Primary",
+    location: "Vineyard, St. Elizabeth & Pondside Primary School, Jamaica",
     dateLabel: "Community Outreach - Day 1",
     isoDate: "2026-01-06",
     type: "Community Outreach",
+    videoId: "PpJNaHyb0gM",
     summary:
-      "Day one focused on household support and community visits in Vineyard, plus school outreach at Pondside Primary.",
+      "Day one combined household outreach in Vineyard with a school visit at Pondside Primary — meeting families, distributing care items, and engaging students and staff.",
     recap: [
       "The team began in Vineyard, St. Elizabeth, meeting families directly and documenting priority needs for follow-up support.",
       "Volunteers distributed care items and made home visits for seniors and households with limited mobility.",
       "Community leaders helped us map urgent requests so support could continue through the remaining outreach days.",
+      "At Pondside Primary, outreach focused on student-centered support and practical needs assessment with school stakeholders.",
+      "Volunteers documented support priorities at the school and aligned with leadership on follow-up for the school community.",
     ],
     impactPoints: [
       "Household outreach completed across the Vineyard area",
+      "Primary school outreach session completed at Pondside Primary",
       "Priority needs logged for follow-up support",
       "Community partner coordination established onsite",
+      "School partnership support strengthened",
     ],
     imageUrl: "/images/optimized/DSC02560-1.jpg",
     collageImages: [
@@ -27,6 +32,9 @@ export const outreachEvents: OutreachEvent[] = [
       "/images/missions/day1-1.png",
       "/images/missions/day1-2.png",
       "/images/missions/day1-3.png",
+      "/images/missions/arrival-2.png",
+      "/images/missions/arrival-3.png",
+      "/images/missions/collage-shrewsbury.png",
     ],
     mapPosition: {
       top: "72%",
@@ -45,6 +53,7 @@ export const outreachEvents: OutreachEvent[] = [
     dateLabel: "Community Outreach - Day 2",
     isoDate: "2026-01-07",
     type: "Community Outreach",
+    videoId: "vq5e0ukQUNk",
     summary:
       "Day two covered Vineyard and Nightingale Grove in New Market with follow-up outreach and direct support continuity.",
     recap: [
@@ -116,6 +125,7 @@ export const outreachEvents: OutreachEvent[] = [
     dateLabel: "Community Outreach - Day 4",
     isoDate: "2026-01-09",
     type: "Community Outreach",
+    videoId: "QXBV2iysZgw",
     summary:
       "Day four was completed in Petersfield, Westmoreland, with direct outreach across the district.",
     recap: [
@@ -151,6 +161,7 @@ export const outreachEvents: OutreachEvent[] = [
     dateLabel: "Community Outreach - School Visit",
     isoDate: "2026-01-06",
     type: "Community Outreach",
+    videoId: "bPwAq3-LtAg",
     summary:
       "Our team also served at Top Hill Primary in St. Elizabeth with school-based outreach support.",
     recap: [
@@ -176,42 +187,6 @@ export const outreachEvents: OutreachEvent[] = [
     coordinates: {
       lat: 18.079,
       lng: -77.699,
-    },
-  },
-  {
-    id: "evt-005",
-    slug: "pondside-primary-st-elizabeth",
-    title: "School Outreach - Pondside Primary",
-    location: "Pondside Primary School, St. Elizabeth, Jamaica",
-    dateLabel: "Community Outreach - School Visit",
-    isoDate: "2026-01-06",
-    type: "Community Outreach",
-    summary:
-      "Additional outreach was completed at Pondside Primary in St. Elizabeth.",
-    recap: [
-      "The Pondside Primary outreach focused on student-centered support and practical needs assessment.",
-      "Volunteers engaged school stakeholders and documented support priorities for follow-up.",
-      "This visit reinforced the school partnership track within the wider outreach effort.",
-    ],
-    impactPoints: [
-      "Primary school outreach session completed",
-      "Needs and referrals captured for next phase",
-      "School partnership support strengthened",
-    ],
-    imageUrl: "/images/optimized/DSC02665.png",
-    imagePosition: "center 28%",
-    collageImages: [
-      "/images/missions/arrival-2.png",
-      "/images/missions/arrival-3.png",
-      "/images/missions/collage-shrewsbury.png",
-    ],
-    mapPosition: {
-      top: "68%",
-      left: "22%",
-    },
-    coordinates: {
-      lat: 18.0309,
-      lng: -77.706,
     },
   },
 ];

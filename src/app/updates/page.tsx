@@ -41,15 +41,15 @@ export default function UpdatesPage() {
         <section className="border-t border-brand-forest/10 bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div className="mx-auto w-full max-w-6xl">
             <SectionHeading
-              eyebrow="Recent Missions"
+              eyebrow="Recent Outreach"
               title="Read the latest field stories"
-              description="Catch up on completed outreach missions and community impact reports."
+              description="Catch up on completed outreach days and community impact reports."
             />
             <Link
-              href="/missions"
+              href="/what-we-do"
               className="inline-flex items-center gap-2 rounded-full bg-brand-forest px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-forest-dark hover:shadow-md"
             >
-              View all mission stories
+              View all outreach stories
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

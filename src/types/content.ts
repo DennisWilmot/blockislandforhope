@@ -14,6 +14,8 @@ export type OutreachEvent = {
   imageUrl: string;
   imagePosition?: string;
   collageImages?: string[];
+  /** YouTube video ID for the day hero embed — https://youtu.be/{id} */
+  videoId?: string;
   mapPosition: {
     top: string;
     left: string;

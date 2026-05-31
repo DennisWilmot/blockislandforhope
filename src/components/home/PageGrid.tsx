@@ -22,7 +22,7 @@ const tiles: Tile[] = [
   {
     href: "/what-we-do",
     title: "What We Do",
-    description: "Explore the programmes serving families, youth, and seniors.",
+    description: "Watch the trip recap and read stories from each outreach day across Jamaica.",
     imageUrl: "/images/optimized/DSC02874.jpg",
     imagePosition: "center 28%",
     overlay: "from-brand-navy/70 via-brand-navy/30 to-brand-ink/60",

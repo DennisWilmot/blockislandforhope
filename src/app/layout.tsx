@@ -5,7 +5,6 @@ import "./globals.css";
 
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { CtaBanner } from "@/components/ui/CtaBanner";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -23,6 +22,10 @@ export const metadata: Metadata = {
   title: "Block Island Hope for Jamaica",
   description:
     "A story-led charity website for Block Island Hope for Jamaica, serving Jamaican communities through outreach, medical missions, and feeding programmes.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -35,7 +38,6 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <SiteHeader />
         <main>{children}</main>
-        <CtaBanner />
         <SiteFooter />
       </body>
     </html>

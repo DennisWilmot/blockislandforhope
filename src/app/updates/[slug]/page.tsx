@@ -6,6 +6,7 @@ import { formatLongDate } from "@/lib/format";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { ImageCollage } from "@/components/ui/ImageCollage";
+import { OutreachOutcomes } from "@/components/ui/OutreachOutcomes";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -52,14 +53,7 @@ export default async function EventDetailPage({ params }: Props) {
               ))}
             </div>
 
-            <div className="mt-12 rounded-2xl border border-brand-forest/10 bg-white p-6 shadow-soft md:p-8">
-              <h2 className="font-display text-2xl tracking-tight text-brand-ink">Key outcomes</h2>
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-brand-ink/70">
-                {event.impactPoints.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </div>
+            <OutreachOutcomes points={event.impactPoints} title="Key outcomes" className="mt-12" />
 
             <div className="mt-10 flex flex-wrap gap-3">
               <Link

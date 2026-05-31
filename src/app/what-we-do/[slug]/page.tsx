@@ -6,12 +6,13 @@ import { formatLongDate } from "@/lib/format";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { ImageCollage } from "@/components/ui/ImageCollage";
+import { OutreachOutcomes } from "@/components/ui/OutreachOutcomes";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
-export default async function MissionStoryPage({ params }: Props) {
+export default async function OutreachStoryPage({ params }: Props) {
   const { slug } = await params;
   const event = outreachEvents.find((item) => item.slug === slug);
 
@@ -20,6 +21,7 @@ export default async function MissionStoryPage({ params }: Props) {
   }
 
   const hasCollage = event.collageImages && event.collageImages.length > 0;
+  const hasVideo = Boolean(event.videoId);
 
   return (
     <>
@@ -27,7 +29,9 @@ export default async function MissionStoryPage({ params }: Props) {
         eyebrow={event.dateLabel}
         title={event.title}
         description={`${event.location} — ${formatLongDate(event.isoDate)}`}
-        imageUrl={!hasCollage ? event.imageUrl : undefined}
+        videoId={event.videoId}
+        videoTitle={event.title}
+        imageUrl={!hasVideo && !hasCollage ? event.imageUrl : undefined}
         imagePosition={event.imagePosition ?? "center"}
       />
 
@@ -36,11 +40,7 @@ export default async function MissionStoryPage({ params }: Props) {
           <article className="mx-auto w-full max-w-4xl">
             {hasCollage && (
               <div className="mb-12">
-                <ImageCollage
-                  images={event.collageImages!}
-                  alt={event.title}
-                  priority
-                />
+                <ImageCollage images={event.collageImages!} alt={event.title} priority />
               </div>
             )}
 
@@ -52,21 +52,14 @@ export default async function MissionStoryPage({ params }: Props) {
               ))}
             </div>
 
-            <div className="mt-12 rounded-2xl border border-brand-forest/10 bg-white p-6 shadow-soft md:p-8">
-              <h2 className="font-display text-2xl tracking-tight text-brand-ink">Mission outcomes</h2>
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-brand-ink/70">
-                {event.impactPoints.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </div>
+            <OutreachOutcomes points={event.impactPoints} className="mt-12" />
 
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
-                href="/missions"
+                href="/what-we-do"
                 className="inline-flex rounded-full border border-brand-forest/20 px-5 py-2.5 text-sm font-semibold text-brand-forest transition-all duration-200 hover:bg-brand-forest hover:text-white"
               >
-                Back to missions
+                Back to outreach
               </Link>
               <Link
                 href="/take-action"
