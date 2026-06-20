@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 const GOOGLE_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSfft2XiJgqMdXWzom_QijRRlsF3T_c3VyWVqRrHJFksO33G-Q/viewform?embedded=true";
 
-const CONTACT_EMAIL = "blockislandhopeja@gmail.com";
+const CONTACT_EMAIL = "support@blockislandhopeforjamaica.org";
 const WHATSAPP_HREF = "https://wa.me/18762510622";
 
 const socialLinks = [
