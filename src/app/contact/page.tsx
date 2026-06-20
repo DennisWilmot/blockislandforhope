@@ -1,15 +1,14 @@
-"use client";
-
 import Link from "next/link";
-import { useState, FormEvent } from "react";
 
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
+const GOOGLE_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfft2XiJgqMdXWzom_QijRRlsF3T_c3VyWVqRrHJFksO33G-Q/viewform?embedded=true";
+
 const CONTACT_EMAIL = "blockislandhopeja@gmail.com";
-const WHATSAPP_NUMBER = "18762510622";
-const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}`;
+const WHATSAPP_HREF = "https://wa.me/18762510622";
 
 const socialLinks = [
   { href: "https://wa.me/18762510622", label: "WhatsApp" },
@@ -19,27 +18,6 @@ const socialLinks = [
 ];
 
 export default function ContactPage() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("sending");
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    const name = data.get("name") as string;
-    const email = data.get("email") as string;
-    const subject = data.get("subject") as string;
-    const message = data.get("message") as string;
-
-    const mailtoBody = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\n${message}`
-    );
-    const mailtoSubject = encodeURIComponent(subject);
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${mailtoSubject}&body=${mailtoBody}`;
-    setStatus("sent");
-    form.reset();
-  }
-
   return (
     <>
       <PageHeader
@@ -102,84 +80,20 @@ export default function ContactPage() {
                 </div>
               </aside>
 
-              <form
-                onSubmit={handleSubmit}
-                className="rounded-2xl border border-brand-forest/10 bg-white p-6 shadow-soft md:p-8"
-              >
-                <h2 className="font-display text-2xl tracking-tight text-brand-ink">Send us a message</h2>
-                <p className="mt-1.5 text-sm text-brand-ink/55">
-                  Your message will open in your email app, pre-addressed to our inbox.
-                </p>
-                <div className="mt-6 space-y-5">
-                  <div>
-                    <label htmlFor="name" className="text-sm font-medium text-brand-ink">
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      className="mt-1.5 w-full rounded-xl border border-brand-forest/15 bg-brand-cream/40 px-4 py-3 text-sm transition-colors duration-200 placeholder:text-brand-ink/35 focus:border-brand-forest focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="text-sm font-medium text-brand-ink">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      className="mt-1.5 w-full rounded-xl border border-brand-forest/15 bg-brand-cream/40 px-4 py-3 text-sm transition-colors duration-200 placeholder:text-brand-ink/35 focus:border-brand-forest focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                      placeholder="you@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="subject" className="text-sm font-medium text-brand-ink">
-                      Subject
-                    </label>
-                    <input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      required
-                      className="mt-1.5 w-full rounded-xl border border-brand-forest/15 bg-brand-cream/40 px-4 py-3 text-sm transition-colors duration-200 placeholder:text-brand-ink/35 focus:border-brand-forest focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                      placeholder="What's this about?"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="text-sm font-medium text-brand-ink">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      required
-                      className="mt-1.5 w-full rounded-xl border border-brand-forest/15 bg-brand-cream/40 px-4 py-3 text-sm transition-colors duration-200 placeholder:text-brand-ink/35 focus:border-brand-forest focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                      placeholder="Tell us how we can help..."
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    disabled={status === "sending"}
-                    className="w-full rounded-full bg-brand-forest px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-forest-dark hover:shadow-md active:scale-[0.99] disabled:opacity-70"
-                  >
-                    {status === "sending" ? "Opening email…" : "Send message"}
-                  </button>
-                  {status === "sent" && (
-                    <p className="text-center text-sm text-brand-forest">
-                      Your email client should have opened. If not, email us directly at{" "}
-                      <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
-                        {CONTACT_EMAIL}
-                      </a>
-                    </p>
-                  )}
-                </div>
-              </form>
+              <div className="rounded-2xl border border-brand-forest/10 bg-white shadow-soft overflow-hidden">
+                <iframe
+                  src={GOOGLE_FORM_URL}
+                  title="Contact form — Block Island Hope for Jamaica"
+                  width="100%"
+                  height="700"
+                  frameBorder="0"
+                  marginHeight={0}
+                  marginWidth={0}
+                  className="w-full"
+                >
+                  Loading form…
+                </iframe>
+              </div>
             </div>
           </FadeInSection>
 
