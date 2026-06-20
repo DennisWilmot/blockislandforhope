@@ -30,6 +30,11 @@ const nextConfig: NextConfig = {
         destination: "/what-we-do/vineyards-black-river-day-1",
         permanent: true,
       },
+      {
+        source: "/what-we-do/top-hill-primary-st-elizabeth",
+        destination: "/what-we-do/shewberry-school-st-elizabeth",
+        permanent: true,
+      },
     ];
   },
 };

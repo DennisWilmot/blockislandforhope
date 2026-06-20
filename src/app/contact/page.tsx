@@ -1,10 +1,45 @@
+"use client";
+
 import Link from "next/link";
+import { useState, FormEvent } from "react";
 
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
+const CONTACT_EMAIL = "blockislandhopeja@gmail.com";
+const WHATSAPP_NUMBER = "18762510622";
+const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+const socialLinks = [
+  { href: "https://wa.me/18762510622", label: "WhatsApp" },
+  { href: "https://www.instagram.com/bihopeforjamaica", label: "Instagram" },
+  { href: "https://x.com/BIhopeforJa", label: "X (Twitter)" },
+  { href: "https://www.facebook.com/people/BIHopeforJamaica/61590290863318/", label: "Facebook" },
+];
+
 export default function ContactPage() {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name = data.get("name") as string;
+    const email = data.get("email") as string;
+    const subject = data.get("subject") as string;
+    const message = data.get("message") as string;
+
+    const mailtoBody = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${message}`
+    );
+    const mailtoSubject = encodeURIComponent(subject);
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${mailtoSubject}&body=${mailtoBody}`;
+    setStatus("sent");
+    form.reset();
+  }
+
   return (
     <>
       <PageHeader
@@ -24,27 +59,35 @@ export default function ContactPage() {
                   <div className="mt-5 space-y-4 text-sm text-brand-ink/75">
                     <p>
                       <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-brand-ink/50">Email</span>
-                      <span className="mt-1 block">hello@blockislandforhope.org</span>
+                      <a
+                        href={`mailto:${CONTACT_EMAIL}`}
+                        className="mt-1 block transition-colors duration-200 hover:text-brand-forest"
+                      >
+                        {CONTACT_EMAIL}
+                      </a>
                     </p>
                     <p>
-                      <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-brand-ink/50">Phone</span>
-                      <span className="mt-1 block">+1 (876) 555-0147</span>
+                      <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-brand-ink/50">WhatsApp</span>
+                      <a
+                        href={WHATSAPP_HREF}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-1 block transition-colors duration-200 hover:text-brand-forest"
+                      >
+                        +1 (876) 251-0622
+                      </a>
                     </p>
                     <p>
-                      <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-brand-ink/50">Office</span>
-                      <span className="mt-1 block">Kingston, Jamaica</span>
+                      <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-brand-ink/50">Location</span>
+                      <span className="mt-1 block">Jamaica</span>
                     </p>
                   </div>
                 </div>
 
                 <div className="rounded-2xl border border-brand-forest/10 bg-white p-6 shadow-soft md:p-8">
                   <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-ink/50">Follow Us</h3>
-                  <div className="mt-4 flex gap-3">
-                    {[
-                      { href: "https://instagram.com", label: "Instagram" },
-                      { href: "https://facebook.com", label: "Facebook" },
-                      { href: "https://linkedin.com", label: "LinkedIn" },
-                    ].map((link) => (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {socialLinks.map((link) => (
                       <Link
                         key={link.label}
                         href={link.href}
@@ -59,8 +102,14 @@ export default function ContactPage() {
                 </div>
               </aside>
 
-              <form className="rounded-2xl border border-brand-forest/10 bg-white p-6 shadow-soft md:p-8">
+              <form
+                onSubmit={handleSubmit}
+                className="rounded-2xl border border-brand-forest/10 bg-white p-6 shadow-soft md:p-8"
+              >
                 <h2 className="font-display text-2xl tracking-tight text-brand-ink">Send us a message</h2>
+                <p className="mt-1.5 text-sm text-brand-ink/55">
+                  Your message will open in your email app, pre-addressed to our inbox.
+                </p>
                 <div className="mt-6 space-y-5">
                   <div>
                     <label htmlFor="name" className="text-sm font-medium text-brand-ink">
@@ -116,10 +165,19 @@ export default function ContactPage() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full rounded-full bg-brand-forest px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-forest-dark hover:shadow-md active:scale-[0.99]"
+                    disabled={status === "sending"}
+                    className="w-full rounded-full bg-brand-forest px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-forest-dark hover:shadow-md active:scale-[0.99] disabled:opacity-70"
                   >
-                    Send message
+                    {status === "sending" ? "Opening email…" : "Send message"}
                   </button>
+                  {status === "sent" && (
+                    <p className="text-center text-sm text-brand-forest">
+                      Your email client should have opened. If not, email us directly at{" "}
+                      <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
+                        {CONTACT_EMAIL}
+                      </a>
+                    </p>
+                  )}
                 </div>
               </form>
             </div>

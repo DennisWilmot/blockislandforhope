@@ -5,6 +5,7 @@ import "./globals.css";
 
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { BackToSchoolBanner } from "@/components/ui/BackToSchoolBanner";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
       <body className="font-body antialiased">
+        <BackToSchoolBanner />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

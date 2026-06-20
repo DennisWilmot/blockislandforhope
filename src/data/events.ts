@@ -35,6 +35,7 @@ export const outreachEvents: OutreachEvent[] = [
       "/images/missions/arrival-2.png",
       "/images/missions/arrival-3.png",
       "/images/missions/collage-shrewsbury.png",
+      "/images/missions/school-1.png",
     ],
     mapPosition: {
       top: "72%",
@@ -89,6 +90,7 @@ export const outreachEvents: OutreachEvent[] = [
     dateLabel: "Community Outreach - Day 3",
     isoDate: "2026-01-08",
     type: "Community Outreach",
+    videoId: "QXBV2iysZgw",
     summary:
       "Day three outreach shifted to Galloway with direct family engagement and practical support.",
     recap: [
@@ -103,7 +105,6 @@ export const outreachEvents: OutreachEvent[] = [
     ],
     imageUrl: "/images/optimized/DJI_0689.jpg",
     collageImages: [
-      "/images/missions/day3-1.png",
       "/images/missions/day3-2.png",
       "/images/missions/day3-3.png",
       "/images/missions/collage-before-after.png",
@@ -125,7 +126,7 @@ export const outreachEvents: OutreachEvent[] = [
     dateLabel: "Community Outreach - Day 4",
     isoDate: "2026-01-09",
     type: "Community Outreach",
-    videoId: "QXBV2iysZgw",
+    videoId: "-H82yXaexn0",
     summary:
       "Day four was completed in Petersfield, Westmoreland, with direct outreach across the district.",
     recap: [
@@ -138,7 +139,7 @@ export const outreachEvents: OutreachEvent[] = [
       "Household support and referral notes captured",
       "Community follow-up pathway prepared",
     ],
-    imageUrl: "/images/optimized/DJI_0514.jpg",
+    imageUrl: "/images/optimized/DJI_0530.jpg",
     collageImages: [
       "/images/missions/day4-1.png",
       "/images/missions/day4-2.png",
@@ -155,28 +156,27 @@ export const outreachEvents: OutreachEvent[] = [
   },
   {
     id: "evt-004",
-    slug: "top-hill-primary-st-elizabeth",
-    title: "School Outreach - Top Hill Primary",
-    location: "Top Hill Primary School, St. Elizabeth, Jamaica",
+    slug: "shewberry-school-st-elizabeth",
+    title: "School Outreach - Shewberry School",
+    location: "Shewberry School, St. Elizabeth, Jamaica",
     dateLabel: "Community Outreach - School Visit",
     isoDate: "2026-01-06",
     type: "Community Outreach",
     videoId: "bPwAq3-LtAg",
     summary:
-      "Our team also served at Top Hill Primary in St. Elizabeth with school-based outreach support.",
+      "Our team served at Shewberry School in St. Elizabeth with school-based outreach support, bringing supplies and direct engagement for students and staff.",
     recap: [
-      "Top Hill Primary hosted a focused school outreach visit with direct engagement for students and staff.",
+      "Shewberry School hosted a focused outreach visit with direct engagement for students and staff.",
       "We provided practical support resources and identified key follow-up needs for the school community.",
       "School leadership and outreach volunteers aligned on continued support priorities after the visit.",
     ],
     impactPoints: [
-      "School-focused outreach delivered onsite",
+      "School-focused outreach delivered onsite at Shewberry",
       "Student and staff support needs documented",
-      "Follow-up collaboration plan agreed",
+      "Follow-up collaboration plan agreed with school leadership",
     ],
     imageUrl: "/images/optimized/DSC02671.jpg",
     collageImages: [
-      "/images/missions/school-1.png",
       "/images/missions/school-2.png",
       "/images/missions/school-3.png",
     ],
@@ -187,6 +187,40 @@ export const outreachEvents: OutreachEvent[] = [
     coordinates: {
       lat: 18.079,
       lng: -77.699,
+    },
+  },
+  {
+    id: "evt-005",
+    slug: "bucks-haven-clarendon",
+    title: "Church & Community Outreach - Bucks Haven",
+    location: "Bucks Haven, Clarendon, Jamaica",
+    dateLabel: "Community Outreach - Clarendon",
+    isoDate: "2026-01-08",
+    type: "Community Outreach",
+    summary:
+      "A church-based community outreach day in Bucks Haven, Clarendon, connecting with local families through a service context and distributing practical support.",
+    recap: [
+      "Our team partnered with a local church in Bucks Haven to host a community outreach session rooted in service and care.",
+      "Families from across the area came to receive support, engage with volunteers, and connect with resources.",
+      "The church setting provided a trusted venue for outreach and enabled deeper engagement with the Clarendon community.",
+    ],
+    impactPoints: [
+      "Church-based outreach day held in Bucks Haven, Clarendon",
+      "Families engaged through local church partnership",
+      "Practical support and care items distributed",
+      "Community relationships established for future visits",
+    ],
+    imageUrl: "/images/missions/day3-1.png",
+    collageImages: [
+      "/images/missions/day3-1.png",
+    ],
+    mapPosition: {
+      top: "58%",
+      left: "38%",
+    },
+    coordinates: {
+      lat: 17.973,
+      lng: -77.212,
     },
   },
 ];
