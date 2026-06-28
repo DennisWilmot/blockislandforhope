@@ -6,9 +6,10 @@ export type HeroSlide = {
 export const HOME_HERO_SLIDES: HeroSlide[] = [
   { url: "/images/optimized/DJI_0579.jpg" },
   { url: "/images/optimized/DJI_0530.jpg" },
+  { url: "/images/optimized/DSC02874.jpg", position: "center 28%" },
   { url: "/images/optimized/DJI_0689.jpg" },
+  { url: "/images/optimized/DSC02560-1.jpg" },
   { url: "/images/optimized/DJI_0521.jpg" },
-  { url: "/images/optimized/DJI_0514.jpg" },
 ];
 
 export const OUR_STORY_HERO_SLIDES: HeroSlide[] = [

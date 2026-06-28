@@ -15,7 +15,7 @@ export function OutreachRecapTeaser() {
         />
 
         <Link
-          href="/what-we-do#recap"
+          href="/what-we-do#trip-recap"
           className="group relative mt-10 block overflow-hidden rounded-2xl shadow-soft transition-shadow duration-300 hover:shadow-glow"
         >
           <div className="relative aspect-video">

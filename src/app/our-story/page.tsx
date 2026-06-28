@@ -16,48 +16,6 @@ export default function OurStoryPage() {
       />
 
       <div className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <section className="mx-auto w-full max-w-6xl">
-          <SectionHeading
-            eyebrow="What Keeps Us Going"
-            title="Interview with a founder"
-            description="Hear how hurricane recovery, one home, and a call to serve grew into Block Island Hope for Jamaica."
-          />
-
-          <FadeInSection>
-            <article className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-12">
-              <YouTubeEmbed
-                videoId={FOUNDER_INTERVIEW_VIDEO_ID}
-                title="What keeps us going — Interview with a founder"
-              />
-
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-ink/50">Where it started</p>
-                <h3 className="mt-2 font-display text-3xl tracking-tight text-brand-ink">Inception</h3>
-                <p className="mt-4 max-w-[50ch] text-base leading-relaxed text-brand-ink/75">
-                  The mission began in the wake of hurricane damage, as recovery efforts and the repair of one home revealed
-                  a wider call to serve families across Jamaica.
-                </p>
-                <ul className="mt-6 space-y-3 text-sm leading-relaxed text-brand-ink/70">
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-forest" aria-hidden />
-                    <span>Hurricane damage exposed urgent needs for repair and recovery</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-forest" aria-hidden />
-                    <span>Volunteers rallied around one home and one family at a time</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-forest" aria-hidden />
-                    <span>That first response grew into a broader mission of practical hope</span>
-                  </li>
-                </ul>
-              </div>
-            </article>
-          </FadeInSection>
-        </section>
-      </div>
-
-      <div className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <FadeInSection>
           <section className="mx-auto w-full max-w-6xl">
             <SectionHeading title="A Jamaican outreach organisation rooted in dignity and care" />
@@ -82,69 +40,34 @@ export default function OurStoryPage() {
         </FadeInSection>
       </div>
 
-      <div className="bg-brand-cream px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <FadeInSection>
-          <section className="mx-auto w-full max-w-6xl">
-            <SectionHeading
-              eyebrow="The Team"
-              title="People behind the mission"
-              description="Leadership rooted in relationship, faith, and hands-on service."
-            />
+      <div className="border-t border-brand-forest/10 bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <section className="mx-auto w-full max-w-6xl">
+          <SectionHeading
+            eyebrow="Leadership"
+            title="The people behind the mission"
+            description="Hear from Martin Rosato on how hurricane recovery, one home, and a call to serve grew into Block Island Hope for Jamaica."
+          />
 
-            <div className="mt-10 grid gap-6 sm:grid-cols-2">
-              <div className="rounded-2xl border border-brand-forest/10 bg-white p-6 shadow-soft md:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-forest">International Director</p>
-                <h3 className="mt-2 font-display text-2xl tracking-tight text-brand-ink">Martin Rosato</h3>
-                <p className="mt-4 text-sm leading-relaxed text-brand-ink/75">
-                  Martin leads international coordination for the organisation — managing fundraising efforts, sourcing work
-                  equipment, and building the community relationships that make each outreach trip possible. His work bridges
-                  Block Island with Jamaica, ensuring every mission is well-resourced and properly connected to the people it
-                  serves.
-                </p>
-                <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-brand-ink/70">
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-forest" aria-hidden />
-                    <span>International fundraising and donor relations</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-forest" aria-hidden />
-                    <span>Work equipment sourcing and logistics</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-forest" aria-hidden />
-                    <span>Community relationship building across Jamaica</span>
-                  </li>
-                </ul>
-              </div>
+          <FadeInSection>
+            <article className="mt-10">
+              <h3 className="font-display text-3xl tracking-tight text-brand-ink">Martin Rosato</h3>
+              <p className="mt-1 text-sm font-semibold uppercase tracking-[0.14em] text-brand-forest">
+                International Director
+              </p>
+              <p className="mt-4 max-w-[65ch] text-base leading-relaxed text-brand-ink/75">
+                Martin leads fundraising, equipment procurement, and international partner relationships that make each
+                outreach trip possible.
+              </p>
 
-              <div className="rounded-2xl border border-brand-forest/10 bg-white p-6 shadow-soft md:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-forest">Internal Director</p>
-                <h3 className="mt-2 font-display text-2xl tracking-tight text-brand-ink">Rev. Peter Preiser</h3>
-                <p className="mt-4 text-sm leading-relaxed text-brand-ink/75">
-                  Senior Pastor of Harbor Church, Block Island, Reverend Preiser leads internal operations and field
-                  ministry. His journey with Jamaica began in the aftermath of Hurricane Melissa — lobbying for disaster
-                  funding, building church and family connections on the ground, and rolling up his sleeves for the physical
-                  work of recovery. His pastoral relationships across Jamaica form the backbone of the organisation's trust
-                  with local communities.
-                </p>
-                <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-brand-ink/70">
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-forest" aria-hidden />
-                    <span>Lobbied for Hurricane Melissa recovery funding</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-forest" aria-hidden />
-                    <span>Built church and family connections across Jamaica</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-forest" aria-hidden />
-                    <span>Hands-on physical work and field ministry leadership</span>
-                  </li>
-                </ul>
+              <div className="mt-10 max-w-3xl">
+                <YouTubeEmbed
+                  videoId={FOUNDER_INTERVIEW_VIDEO_ID}
+                  title="Martin Rosato — Block Island Hope for Jamaica"
+                />
               </div>
-            </div>
-          </section>
-        </FadeInSection>
+            </article>
+          </FadeInSection>
+        </section>
       </div>
     </>
   );

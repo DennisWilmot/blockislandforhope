@@ -1,9 +1,8 @@
-"use client";
-
-import { useState } from "react";
+import Link from "next/link";
 
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FadeInSection } from "@/components/ui/FadeInSection";
+import { SUPPORT_EMAIL, WHATSAPP_DISPLAY, WHATSAPP_HREF } from "@/data/site-contact";
 
 const tiers = [
   {
@@ -24,9 +23,6 @@ const tiers = [
 ];
 
 export default function DonatePage() {
-  const [selectedAmount, setSelectedAmount] = useState<number>(50);
-  const [customAmount, setCustomAmount] = useState<string>("");
-
   return (
     <>
       <PageHeader
@@ -39,53 +35,50 @@ export default function DonatePage() {
         <FadeInSection>
           <section className="mx-auto w-full max-w-3xl">
             <div className="rounded-2xl border border-brand-forest/10 bg-white p-8 shadow-soft md:p-10">
-              <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-xl bg-brand-cream/60 p-5 text-center">
+                <p className="font-display text-2xl tracking-tight text-brand-ink">Donations coming soon</p>
+                <p className="mt-3 text-sm leading-relaxed text-brand-ink/70">
+                  Secure online giving is not live yet. If you want to donate, submit an inquiry through our contact form
+                  or reach out via email or WhatsApp.
+                </p>
+              </div>
+
+              <div className="mt-8 grid gap-4 md:grid-cols-3">
                 {tiers.map((tier) => (
-                  <button
+                  <div
                     key={tier.amount}
-                    type="button"
-                    onClick={() => {
-                      setSelectedAmount(tier.amount);
-                      setCustomAmount("");
-                    }}
-                    className={`cursor-pointer rounded-2xl border p-5 text-left transition-all duration-200 ${
-                      selectedAmount === tier.amount && customAmount === ""
-                        ? "border-brand-forest bg-brand-forest/5 shadow-soft"
-                        : "border-brand-forest/15 hover:border-brand-forest/35 hover:shadow-soft"
-                    }`}
+                    className="rounded-2xl border border-brand-forest/15 bg-brand-cream/30 p-5 text-left"
                   >
                     <p className="font-display text-3xl tracking-tight text-brand-ink">{tier.title}</p>
                     <p className="mt-2 text-sm leading-relaxed text-brand-ink/65">{tier.description}</p>
-                  </button>
+                  </div>
                 ))}
               </div>
 
-              <div className="mt-8">
-                <label className="block text-sm font-medium text-brand-ink" htmlFor="custom-amount">
-                  Custom amount (USD)
-                </label>
-                <input
-                  id="custom-amount"
-                  type="number"
-                  min="1"
-                  placeholder="Enter custom amount"
-                  value={customAmount}
-                  onChange={(event) => setCustomAmount(event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-brand-forest/15 bg-brand-cream/40 px-4 py-3 text-sm transition-colors duration-200 placeholder:text-brand-ink/35 focus:border-brand-forest focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                />
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+                <Link
+                  href="/contact#contact-form"
+                  className="inline-flex items-center justify-center rounded-full bg-brand-forest px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-forest-dark hover:shadow-md"
+                >
+                  Submit an inquiry
+                </Link>
+                <a
+                  href={`mailto:${SUPPORT_EMAIL}`}
+                  className="inline-flex items-center justify-center rounded-full border border-brand-forest/20 px-6 py-3.5 text-sm font-semibold text-brand-forest transition-colors duration-200 hover:bg-brand-forest/5"
+                >
+                  {SUPPORT_EMAIL}
+                </a>
+                <a
+                  href={WHATSAPP_HREF}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-full border border-brand-forest/20 px-6 py-3.5 text-sm font-semibold text-brand-forest transition-colors duration-200 hover:bg-brand-forest/5"
+                >
+                  WhatsApp {WHATSAPP_DISPLAY}
+                </a>
               </div>
 
-              <button
-                type="button"
-                className="mt-8 w-full rounded-full bg-brand-forest px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-forest-dark hover:shadow-md active:scale-[0.99]"
-              >
-                Donate {customAmount ? `$${customAmount}` : `$${selectedAmount}`}
-              </button>
-
-              <p className="mt-6 rounded-xl bg-brand-cream/60 p-4 text-center text-sm leading-relaxed text-brand-ink/65">
-                Payments coming soon. Your selected amount helps us estimate support demand while we finalize secure processing.
-              </p>
-              <p className="mt-3 text-center text-xs uppercase tracking-[0.14em] text-brand-ink/45">
+              <p className="mt-8 text-center text-xs uppercase tracking-[0.14em] text-brand-ink/45">
                 We publish clear impact reporting so supporters can see where funds are used.
               </p>
             </div>

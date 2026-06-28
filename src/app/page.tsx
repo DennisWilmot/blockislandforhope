@@ -11,8 +11,8 @@ function HomeIdentity() {
   return (
     <section className="relative min-h-[672px] overflow-hidden bg-brand-ink md:min-h-[720px]">
       <HeroSlideshow slides={HOME_HERO_SLIDES} />
-      <div className="absolute inset-0 z-[1] bg-brand-ink/60" />
-      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-brand-ink/70 via-brand-ink/40 to-transparent" />
+      <div className="absolute inset-0 z-[1] bg-brand-ink/30" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-brand-ink/35 via-brand-ink/20 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 z-[1] h-12 bg-gradient-to-t from-[#f8f5ef] to-transparent" />
 
       <div className="relative z-10 mx-auto flex min-h-[672px] w-full max-w-6xl flex-col justify-end px-4 py-12 text-white sm:px-6 md:min-h-[720px] md:py-16 lg:px-8">

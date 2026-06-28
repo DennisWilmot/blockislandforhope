@@ -3,19 +3,13 @@ import Link from "next/link";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-
-const GOOGLE_FORM_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfft2XiJgqMdXWzom_QijRRlsF3T_c3VyWVqRrHJFksO33G-Q/viewform?embedded=true";
-
-const CONTACT_EMAIL = "support@blockislandhopeforjamaica.org";
-const WHATSAPP_HREF = "https://wa.me/18762510622";
-
-const socialLinks = [
-  { href: "https://wa.me/18762510622", label: "WhatsApp" },
-  { href: "https://www.instagram.com/bihopeforjamaica", label: "Instagram" },
-  { href: "https://x.com/BIhopeforJa", label: "X (Twitter)" },
-  { href: "https://www.facebook.com/people/BIHopeforJamaica/61590290863318/", label: "Facebook" },
-];
+import { SocialIconLinks } from "@/components/ui/SocialIconLinks";
+import {
+  GOOGLE_FORM_EMBED_URL,
+  SUPPORT_EMAIL,
+  WHATSAPP_DISPLAY,
+  WHATSAPP_HREF,
+} from "@/data/site-contact";
 
 export default function ContactPage() {
   return (
@@ -31,17 +25,17 @@ export default function ContactPage() {
         <section className="mx-auto w-full max-w-6xl">
           <FadeInSection>
             <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-              <aside className="space-y-8">
+              <aside className="space-y-6">
                 <div className="rounded-2xl border border-brand-forest/10 bg-white p-6 shadow-soft md:p-8">
                   <h2 className="font-display text-2xl tracking-tight text-brand-ink">Contact details</h2>
                   <div className="mt-5 space-y-4 text-sm text-brand-ink/75">
                     <p>
                       <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-brand-ink/50">Email</span>
                       <a
-                        href={`mailto:${CONTACT_EMAIL}`}
+                        href={`mailto:${SUPPORT_EMAIL}`}
                         className="mt-1 block transition-colors duration-200 hover:text-brand-forest"
                       >
-                        {CONTACT_EMAIL}
+                        {SUPPORT_EMAIL}
                       </a>
                     </p>
                     <p>
@@ -52,7 +46,7 @@ export default function ContactPage() {
                         rel="noreferrer"
                         className="mt-1 block transition-colors duration-200 hover:text-brand-forest"
                       >
-                        +1 (876) 251-0622
+                        {WHATSAPP_DISPLAY}
                       </a>
                     </p>
                     <p>
@@ -60,29 +54,56 @@ export default function ContactPage() {
                       <span className="mt-1 block">Jamaica</span>
                     </p>
                   </div>
+
+                  <div className="mt-8 border-t border-brand-forest/10 pt-6">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-ink/50">Follow us</p>
+                    <SocialIconLinks className="mt-4 flex flex-wrap gap-3" />
+                  </div>
                 </div>
 
-                <div className="rounded-2xl border border-brand-forest/10 bg-white p-6 shadow-soft md:p-8">
-                  <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-ink/50">Follow Us</h3>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {socialLinks.map((link) => (
-                      <Link
-                        key={link.label}
-                        href={link.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="rounded-full border border-brand-forest/15 px-4 py-2 text-sm text-brand-forest transition-colors duration-200 hover:bg-brand-forest/5"
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
+                <div className="rounded-2xl border border-brand-forest/10 bg-brand-cream/50 p-6 shadow-soft md:p-8">
+                  <h2 className="font-display text-xl tracking-tight text-brand-ink">Donations coming soon</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-brand-ink/75">
+                    Online giving is not live yet. If you want to donate, submit an inquiry through our contact form or
+                    reach out via{" "}
+                    <a href={`mailto:${SUPPORT_EMAIL}`} className="font-medium text-brand-forest hover:underline">
+                      email
+                    </a>{" "}
+                    or{" "}
+                    <a
+                      href={WHATSAPP_HREF}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium text-brand-forest hover:underline"
+                    >
+                      WhatsApp
+                    </a>
+                    .
+                  </p>
+                  <Link
+                    href="#contact-form"
+                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-forest px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-forest-dark"
+                  >
+                    Submit an inquiry
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>
+                      <path
+                        d="M3 8h10m0 0L9 4m4 4L9 12"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </Link>
                 </div>
               </aside>
 
-              <div className="rounded-2xl border border-brand-forest/10 bg-white shadow-soft overflow-hidden">
+              <div
+                id="contact-form"
+                className="scroll-mt-24 overflow-hidden rounded-2xl border border-brand-forest/10 bg-white shadow-soft"
+              >
                 <iframe
-                  src={GOOGLE_FORM_URL}
+                  src={GOOGLE_FORM_EMBED_URL}
                   title="Contact form — Block Island Hope for Jamaica"
                   width="100%"
                   height="700"

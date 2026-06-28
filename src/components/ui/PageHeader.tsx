@@ -56,8 +56,8 @@ export function PageHeader({
       )}
       {(slides?.length || imageUrl) && (
         <>
-          <div className="absolute inset-0 z-[1] bg-brand-ink/55" />
-          <div className="absolute inset-0 z-[1] bg-gradient-to-t from-brand-ink/60 via-transparent to-brand-ink/20" />
+          <div className="absolute inset-0 z-[1] bg-brand-ink/30" />
+          <div className="absolute inset-0 z-[1] bg-gradient-to-t from-brand-ink/35 via-transparent to-brand-ink/20" />
         </>
       )}
       {!slides?.length && !imageUrl && (
