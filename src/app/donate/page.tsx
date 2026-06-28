@@ -29,6 +29,8 @@ export default function DonatePage() {
         eyebrow="Donate"
         title="Your generosity keeps hope moving"
         description="Every contribution helps us continue practical outreach for families who need consistent support."
+        imageUrl="/images/optimized/DSC02874.jpg"
+        imagePosition="center 28%"
       />
 
       <div className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">

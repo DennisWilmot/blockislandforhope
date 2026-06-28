@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { YouTubeEmbed } from "@/components/ui/YouTubeEmbed";
 import { WhereWeWorkMap } from "@/components/home/WhereWeWorkMap";
 import { eventTypeStyles, outreachEvents } from "@/data/events";
-import { SHEWBERRY_VIDEO_ID, TRIP_RECAP_VIDEO_ID } from "@/data/site-media";
+import { TRIP_RECAP_VIDEO_ID } from "@/data/site-media";
 import { WHAT_WE_DO_HERO_SLIDES } from "@/data/hero-slides";
 import { formatLongDate } from "@/lib/format";
 
@@ -24,24 +24,7 @@ export default function WhatWeDoPage() {
         slides={WHAT_WE_DO_HERO_SLIDES}
       />
 
-      <section id="shewberry" className="scroll-mt-24 border-b border-brand-forest/10 bg-brand-cream px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="mx-auto w-full max-w-6xl">
-          <SectionHeading
-            eyebrow="School Outreach"
-            title="Shewberry School"
-            description="Watch our school outreach visit at Shewberry School in the Petersfield area."
-          />
-          <FadeInSection>
-            <YouTubeEmbed
-              videoId={SHEWBERRY_VIDEO_ID}
-              title="Shewberry School outreach — Block Island Hope for Jamaica"
-              className="mt-10"
-            />
-          </FadeInSection>
-        </div>
-      </section>
-
-      <section id="trip-recap" className="scroll-mt-24 border-b border-brand-forest/10 bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section id="trip-recap" className="scroll-mt-24 border-b border-brand-forest/10 bg-brand-cream px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto w-full max-w-6xl">
           <SectionHeading
             eyebrow="Trip Recap"

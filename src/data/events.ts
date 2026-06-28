@@ -107,7 +107,7 @@ export const outreachEvents: OutreachEvent[] = [
       "Local partners engaged for continuity support",
       "Priority cases prepared for follow-up",
     ],
-    imageUrl: "/images/missions/collage-before-after.png",
+    imageUrl: "/images/missions/day3-2.png",
     collageImages: [
       "/images/missions/day3-2.png",
       "/images/missions/day3-3.png",
@@ -179,7 +179,7 @@ export const outreachEvents: OutreachEvent[] = [
       "Student and staff support needs documented",
       "Follow-up collaboration plan agreed",
     ],
-    imageUrl: "/images/missions/collage-shrewsbury.png",
+    imageUrl: "/images/missions/arrival-2.png",
     collageImages: [
       "/images/missions/collage-shrewsbury.png",
       "/images/missions/arrival-2.png",
@@ -214,9 +214,8 @@ export const outreachEvents: OutreachEvent[] = [
       "Community and faith leader connections established",
       "Follow-up support priorities captured for Clarendon",
     ],
-    imageUrl: "/images/missions/day3-1.png",
+    imageUrl: "/images/missions/school-1.png",
     collageImages: [
-      "/images/missions/day3-1.png",
       "/images/missions/school-1.png",
       "/images/missions/school-2.png",
       "/images/missions/school-3.png",
