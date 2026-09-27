@@ -7,5 +7,8 @@ export const SHEWBERRY_VIDEO_ID = "bPwAq3-LtAg";
 /** Founder / inception interview — https://youtu.be/2We2jb35X4k */
 export const FOUNDER_INTERVIEW_VIDEO_ID = "2We2jb35X4k";
 
+/** Rev. Peter Preiser interview — https://youtu.be/-b0zj2N8pf0 */
+export const PETER_INTERVIEW_VIDEO_ID = "-b0zj2N8pf0";
+
 /** Petersfield outreach — https://youtu.be/-H82yXaexn0 */
 export const PETERSFIELD_VIDEO_ID = "-H82yXaexn0";

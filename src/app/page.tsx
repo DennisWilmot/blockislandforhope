@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { ChristmasBanner } from "@/components/home/ChristmasBanner";
 import { OutreachRecapTeaser } from "@/components/home/OutreachRecapTeaser";
 import { PageGrid } from "@/components/home/PageGrid";
 import { WhereWeWorkMap } from "@/components/home/WhereWeWorkMap";
@@ -29,16 +30,16 @@ function HomeIdentity() {
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
-              href="/what-we-do"
+              href="/donate"
               className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-forest shadow-sm transition-all duration-200 hover:bg-brand-cream hover:shadow-md"
             >
-              See Our Outreach
+              Donate
             </Link>
             <Link
-              href="/take-action"
+              href="/what-we-do"
               className="inline-flex rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/20"
             >
-              Take Action
+              See Our Outreach
             </Link>
           </div>
         </div>
@@ -76,6 +77,9 @@ export default function HomePage() {
   return (
     <>
       <HomeIdentity />
+      <FadeInSection>
+        <ChristmasBanner />
+      </FadeInSection>
       <MissionVision />
       <FadeInSection>
         <OutreachRecapTeaser />

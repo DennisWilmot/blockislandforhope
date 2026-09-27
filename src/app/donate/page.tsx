@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { SUPPORT_EMAIL, WHATSAPP_DISPLAY, WHATSAPP_HREF } from "@/data/site-contact";
+
+export const metadata: Metadata = {
+  title: "Donate",
+  description:
+    "Support practical outreach, supplies, transport, education, and community-led assistance for families across Jamaica.",
+};
 
 const tiers = [
   {
@@ -19,6 +26,21 @@ const tiers = [
     amount: 100,
     title: "$100",
     description: "Helps fund mobile outreach transport and essentials.",
+  },
+];
+
+const trustPoints = [
+  {
+    title: "Community-led",
+    description: "Support is guided by local relationships and needs identified in the communities we serve.",
+  },
+  {
+    title: "Practical support",
+    description: "Contributions help move food, supplies, transport, and hands-on outreach where they are needed.",
+  },
+  {
+    title: "Clear reporting",
+    description: "We share outreach stories and outcomes so supporters can see the work their generosity makes possible.",
   },
 ];
 
@@ -43,6 +65,15 @@ export default function DonatePage() {
                   Secure online giving is not live yet. If you want to donate, submit an inquiry through our contact form
                   or reach out via email or WhatsApp.
                 </p>
+              </div>
+
+              <div className="mt-8 grid gap-6 border-y border-brand-forest/10 py-6 sm:grid-cols-3">
+                {trustPoints.map((point) => (
+                  <div key={point.title}>
+                    <p className="text-sm font-semibold text-brand-forest">{point.title}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-brand-ink/65">{point.description}</p>
+                  </div>
+                ))}
               </div>
 
               <div className="mt-8 grid gap-4 md:grid-cols-3">

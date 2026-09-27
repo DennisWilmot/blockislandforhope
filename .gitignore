@@ -4,6 +4,7 @@ node_modules
 out
 dist
 coverage
+.codex-video-work/
 .env
 .env.local
 .env.production

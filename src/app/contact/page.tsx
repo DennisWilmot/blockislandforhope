@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -6,10 +7,17 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SocialIconLinks } from "@/components/ui/SocialIconLinks";
 import {
   GOOGLE_FORM_EMBED_URL,
+  GOOGLE_FORM_URL,
   SUPPORT_EMAIL,
   WHATSAPP_DISPLAY,
   WHATSAPP_HREF,
 } from "@/data/site-contact";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact Block Island Hope for Jamaica about volunteering, donations, partnerships, outreach needs, or community support.",
+};
 
 export default function ContactPage() {
   return (
@@ -102,6 +110,20 @@ export default function ContactPage() {
                 id="contact-form"
                 className="scroll-mt-24 overflow-hidden rounded-2xl border border-brand-forest/10 bg-white shadow-soft"
               >
+                <div className="flex flex-col gap-4 border-b border-brand-forest/10 bg-brand-forest/5 px-5 py-5 sm:flex-row sm:items-center sm:justify-between md:px-6">
+                  <div>
+                    <p className="text-sm font-semibold text-brand-ink">Contact form not showing?</p>
+                    <p className="mt-1 text-sm text-brand-ink/65">Open the secure Google Form directly in a new tab.</p>
+                  </div>
+                  <a
+                    href={GOOGLE_FORM_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex shrink-0 items-center justify-center rounded-full bg-brand-forest px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-forest-dark"
+                  >
+                    Open contact form
+                  </a>
+                </div>
                 <iframe
                   src={GOOGLE_FORM_EMBED_URL}
                   title="Contact form — Block Island Hope for Jamaica"

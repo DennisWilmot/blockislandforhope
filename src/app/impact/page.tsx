@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,7 +7,12 @@ import { donationAllocation, impactStats } from "@/data/stats";
 import { testimonials } from "@/data/testimonials";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FadeInSection } from "@/components/ui/FadeInSection";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+
+export const metadata: Metadata = {
+  title: "Our Impact",
+  description:
+    "See how practical outreach, trusted partnerships, and direct community support are making a difference across Jamaica.",
+};
 
 function DonationDonut() {
   const total = donationAllocation.reduce((acc, item) => acc + item.value, 0);

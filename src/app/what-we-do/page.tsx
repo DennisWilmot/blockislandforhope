@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,6 +11,12 @@ import { eventTypeStyles, outreachEvents } from "@/data/events";
 import { TRIP_RECAP_VIDEO_ID } from "@/data/site-media";
 import { WHAT_WE_DO_HERO_SLIDES } from "@/data/hero-slides";
 import { formatLongDate } from "@/lib/format";
+
+export const metadata: Metadata = {
+  title: "What We Do",
+  description:
+    "Explore Block Island Hope for Jamaica outreach, including home restoration, school support, relief work, and community partnerships.",
+};
 
 export default function WhatWeDoPage() {
   const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? process.env.MAPBOX_TOKEN ?? "";

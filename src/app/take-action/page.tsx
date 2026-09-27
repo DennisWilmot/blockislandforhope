@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GOOGLE_FORM_URL, SUPPORT_EMAIL, WHATSAPP_DISPLAY, WHATSAPP_HREF } from "@/data/site-contact";
+
+export const metadata: Metadata = {
+  title: "Take Action",
+  description:
+    "Donate, volunteer, partner, or contribute goods and professional support to outreach serving Jamaican communities.",
+};
 
 const paths = [
   {
@@ -13,8 +20,7 @@ const paths = [
     button: "Go to Donate",
     href: "/donate",
     highlighted: true,
-    imageUrl:
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1800&q=80",
+    imageUrl: "/images/optimized/DJI_0514.jpg",
     overlay: "from-brand-forest/40 via-brand-forest/25 to-brand-ink/38",
   },
   {
@@ -24,8 +30,7 @@ const paths = [
     button: "Volunteer interest",
     href: "/contact",
     highlighted: false,
-    imageUrl:
-      "https://images.unsplash.com/photo-1469571486292-b53601020f1f?auto=format&fit=crop&w=1800&q=80",
+    imageUrl: "/images/optimized/DSC02811.jpg",
     overlay: "from-brand-navy/40 via-brand-navy/25 to-brand-ink/38",
   },
   {
@@ -35,8 +40,7 @@ const paths = [
     button: "Start a partnership",
     href: "/contact",
     highlighted: false,
-    imageUrl:
-      "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1800&q=80",
+    imageUrl: "/images/optimized/DSC02560-1.jpg",
     overlay: "from-brand-coral/40 via-brand-coral/25 to-brand-ink/38",
   },
   {
@@ -46,8 +50,7 @@ const paths = [
     button: "View needs list",
     href: "/contact",
     highlighted: false,
-    imageUrl:
-      "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1800&q=80",
+    imageUrl: "/images/optimized/DJI_0502.jpg",
     overlay: "from-brand-amber/40 via-brand-amber/25 to-brand-ink/38",
   },
 ];

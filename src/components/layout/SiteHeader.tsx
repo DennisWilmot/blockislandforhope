@@ -155,15 +155,19 @@ export function SiteHeader() {
       <header className="sticky top-0 z-[110] border-b border-brand-forest/10 bg-brand-cream">
         <div
           ref={headerBarRef}
-          className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-4 py-3.5 sm:px-6 lg:px-8"
+          className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8"
         >
-          <Link href="/" className="group shrink-0 transition-opacity hover:opacity-90">
+          <Link
+            href="/"
+            aria-label="Block Island Hope for Jamaica home"
+            className="group shrink-0 transition-opacity hover:opacity-90"
+          >
             <Image
-              src="/logo.png"
-              alt="Block Island Hope for Jamaica — Charity Foundation, Est. 2024"
-              width={160}
-              height={160}
-              className="h-14 w-auto sm:h-[4.5rem]"
+              src="/block-island-logo-navbar.png"
+              alt="Block Island Hope for Jamaica"
+              width={800}
+              height={744}
+              className="h-[4.75rem] w-auto sm:h-[5.5rem] lg:h-[5.75rem]"
               priority
             />
           </Link>
@@ -194,6 +198,20 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <Link
+              href="/search"
+              aria-label="Search the site"
+              className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-forest ${
+                pathname === "/search"
+                  ? "bg-brand-forest/10 text-brand-forest"
+                  : "text-brand-ink/65 hover:bg-brand-forest/5 hover:text-brand-forest"
+              }`}
+            >
+              <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+                <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="1.7" />
+                <path d="m16 16 4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+              </svg>
+            </Link>
             <Button href="/donate" className="hidden px-5 py-2 text-sm sm:inline-flex">
               Donate
             </Button>
@@ -291,6 +309,17 @@ export function SiteHeader() {
             })}
 
             <div className="mt-6 border-t border-brand-forest/10 pt-6">
+              <Link
+                href="/search"
+                onClick={() => setMobileOpen(false)}
+                className="mb-3 flex w-full items-center justify-center gap-2 rounded-full border border-brand-forest/20 px-5 py-3.5 text-base font-semibold text-brand-forest transition-colors hover:bg-brand-forest/5"
+              >
+                <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+                  <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="1.7" />
+                  <path d="m16 16 4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+                </svg>
+                Search the site
+              </Link>
               <Button href="/donate" className="!flex w-full justify-center py-3.5 text-base">
                 Donate
               </Button>

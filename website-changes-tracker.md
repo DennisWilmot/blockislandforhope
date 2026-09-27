@@ -1,6 +1,6 @@
 # Website Changes Tracker
 
-Last updated: 2026-05-30 (post Our Story, contact, donate pass)  
+Last updated: 2026-09-27 (search, organization schema, and Christmas banner completed)
 Source: client feedback table + follow-up list
 
 Use this file to track progress. Check items off as they ship.
@@ -102,10 +102,11 @@ Suggested slug: `bucks-haven-clarendon` (adjust if client prefers)
 
 | Status | Current | Future | Notes |
 |--------|---------|--------|-------|
-| [x] | Martin listed as founder | **Martin Rosato — International Director** | Name, title, bio above video |
+| [x] | Martin listed as founder | **Martin Rosato — International Board Member** | Name, corrected title, bio above video |
 | [x] | Org story placement | **Above** leadership section | “A Jamaican outreach organisation…” first |
-| [x] | Peter Preiser on page | **Removed from Our Story** | Per client; not listed on this page |
-| [x] | Video + bio layout | **Stacked** (no side card) | Video below Martin’s text |
+| [x] | Peter Preiser interview | **Added beneath Martin** | YouTube `-b0zj2N8pf0`, matching leadership treatment |
+| [x] | Shannon profile | **Board Member, coming-soon placeholder** | No recording-specific copy |
+| [x] | Video + bio layout | **Responsive split layout** | Bio and interview align side-by-side on desktop, stack on mobile |
 
 ---
 
@@ -118,6 +119,7 @@ Suggested slug: `bucks-haven-clarendon` (adjust if client prefers)
 | [x] | Merge contact + follow cards | Single card with email, WhatsApp, location, social icons |
 | [x] | Social icon links | `SocialIconLinks` component (not pill badges) |
 | [x] | Donations coming soon card | Below contact card; links to `#contact-form` |
+| [x] | Embedded form fallback | Direct link opens the Google Form in a new tab if the embed fails |
 
 ### Donate page
 
@@ -172,6 +174,8 @@ Suggested slug: `bucks-haven-clarendon` (adjust if client prefers)
 
 | Status | Item | Notes |
 |--------|------|-------|
+| [x] | Christmas and New Year activity cards | Three equal cards with authentic photo headers and seasonal calls to action |
+| [x] | Christmas Community Care banner | Prominent image-led homepage banner with donation and activities links |
 | [—] | Back to School outreach banner (August) | **Deferred** — not building yet |
 
 ---
@@ -182,6 +186,21 @@ Suggested slug: `bucks-haven-clarendon` (adjust if client prefers)
 - [x] Redirects after slug renames (Top Hill → Shewberry, new Bucks Haven slug)
 - [x] Hero overlay ~50% reduction (all pages)
 - [x] Nav logo +30% (all breakpoints)
+- [x] Global social-sharing metadata (WhatsApp, Facebook, X, and link previews)
+- [x] Unique search titles and descriptions for all major static pages
+- [x] Organization structured data for Google (`NGO`, contact details, social profiles, service area)
+
+### Site-wide search
+
+**Goal:** make outreach stories, programmes, updates, people, and ways to help easy to find from anywhere on the site.
+
+- [x] Add a search trigger to the desktop and mobile navigation
+- [x] Build a lightweight search index from existing site content and structured data
+- [x] Support typo-tolerant matching, useful ranking, and highlighted result excerpts
+- [x] Group results by content type (Outreach, Updates, Programmes, People, Pages)
+- [x] Add keyboard navigation, clear focus states, empty results, and a no-results recovery path
+- [x] Keep the first version local and build-time generated; no external search service required at the current site size
+- [x] Verify search-index generation during production builds
 
 ### Assets still needed
 
@@ -202,7 +221,7 @@ Suggested slug: `bucks-haven-clarendon` (adjust if client prefers)
 - [x] Tracker execution pass: outreach redo, footer/partners/social, site-contact constants
 - [x] Contact: merged card, social icons, donations-coming-soon card
 - [x] Donate page → contact form + coming-soon messaging
-- [x] Our Story: org section first; Martin bio above video; Peter removed from page
+- [x] Our Story: org section first; Martin, Peter, and Shannon leadership sections
 
 ---
 
@@ -216,7 +235,7 @@ Suggested slug: `bucks-haven-clarendon` (adjust if client prefers)
 | Map parity check | [ ] | Dev — outreach map on What We Do |
 | Shewberry School photos | [ ] | Client — correct set to replace placeholder |
 | Bucks Haven photos | [ ] | Client — dedicated Clarendon assets |
-| August back-to-school banner | [—] | Deferred |
+| August back-to-school banner | [—] | Deferred — replaced for now by the completed Christmas banner |
 
 ---
 
